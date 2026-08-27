@@ -1,0 +1,218 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Fast &amp; Easy Quotes &middot; Shipfront &middot; THE NETWORK</title>
+    <meta
+      name="description"
+      content="Please take a moment to give us some information. We have expert agents standing by to take care of your logistics needs."
+    />
+    <meta name="color-scheme" content="dark light" />
+    <meta name="theme-color" content="#07111e" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;500;600&family=JetBrains+Mono:wght@400;500;600&display=swap"
+    />
+    <link rel="stylesheet" href="assets/css/site.css" />
+  </head>
+
+  <body>
+    <a class="skip" href="#main">Skip to content</a>
+
+    <header class="nav">
+      <div class="shell nav__inner">
+        <a class="wordmark" href="index.html">
+          <b>SHIPFRONT</b>
+          <span>THE NETWORK</span>
+        </a>
+
+        <button
+          class="nav__toggle"
+          type="button"
+          aria-expanded="false"
+          aria-controls="nav-sheet"
+          data-nav-toggle
+        >
+          <span data-nav-label>Menu</span>
+        </button>
+
+        <nav class="nav__links" id="nav-sheet" aria-label="Primary" data-nav-sheet>
+          <a class="nav__link" href="index.html">Home</a>
+          <a class="nav__link" href="index.html#network">The Network</a>
+          <a class="nav__link" href="index.html#services">Services</a>
+          <a class="nav__link" href="contact.html">Contact</a>
+          <a class="btn" href="get-a-quote.html" aria-current="page">Get a Quote</a>
+        </nav>
+      </div>
+    </header>
+
+    <main id="main">
+      <section class="hero">
+        <div class="shell hero__grid">
+          <div class="hero__meta">
+            <p class="eyebrow">Get a Quote</p>
+            <h1 class="display display--xl">
+              <span class="line">Fast &amp; Easy</span>
+              <span class="line line--signal">Quotes</span>
+            </h1>
+          </div>
+          <div class="hero__meta">
+            <p class="lede">
+              Please take a moment to give us some information. We have expert
+              agents standing by to take care of your logistics needs.
+            </p>
+            <ul class="hero__ticker">
+              <li>Inbound</li>
+              <li>Kitting</li>
+              <li>Storage</li>
+              <li>FBA Prep</li>
+              <li>Outbound</li>
+              <li>Last-Mile Delivery</li>
+              <li>Same-Day Delivery</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <section class="section night-deep">
+        <div class="shell">
+          <p class="notice">
+            <span class="mono">Preview</span>
+            <span>
+              This build is a design preview. The form below does not submit and
+              nothing is stored or sent. To reach Shipfront directly, email
+              <a href="mailto:info@myshipfront.com">info@myshipfront.com</a>.
+            </span>
+          </p>
+
+          <form class="form" novalidate data-preview-form>
+            <div class="field">
+              <label for="q-name">Name</label>
+              <input id="q-name" name="name" type="text" autocomplete="name" />
+            </div>
+
+            <div class="field">
+              <label for="q-email">Email</label>
+              <input id="q-email" name="email" type="email" autocomplete="email" />
+            </div>
+
+            <div class="field">
+              <label for="q-phone">Phone</label>
+              <input id="q-phone" name="phone" type="tel" autocomplete="tel" />
+            </div>
+
+            <div class="field">
+              <label for="q-company">Company Name</label>
+              <input
+                id="q-company"
+                name="company"
+                type="text"
+                autocomplete="organization"
+              />
+            </div>
+
+            <div class="field field--wide">
+              <label for="q-website">Website</label>
+              <input id="q-website" name="website" type="url" autocomplete="url" />
+            </div>
+
+            <div class="field field--wide">
+              <label for="q-product">Product Description</label>
+              <textarea id="q-product" name="product" rows="4"></textarea>
+            </div>
+
+            <div class="field">
+              <label for="q-skus">Number of SKUs</label>
+              <input id="q-skus" name="skus" type="text" inputmode="numeric" />
+            </div>
+
+            <div class="field">
+              <label for="q-shipments">Shipments per Month</label>
+              <input
+                id="q-shipments"
+                name="shipments"
+                type="text"
+                inputmode="numeric"
+              />
+            </div>
+
+            <div class="field field--wide">
+              <label for="q-turns">Turns per Month</label>
+              <input id="q-turns" name="turns" type="text" inputmode="numeric" />
+            </div>
+
+            <div class="field field--wide">
+              <label for="q-additional">Additional Information</label>
+              <textarea id="q-additional" name="additional" rows="4"></textarea>
+            </div>
+
+            <div class="form__foot">
+              <button class="btn btn--lg" type="submit">Send</button>
+              <span class="mono mono--faint">Preview only</span>
+            </div>
+
+            <div
+              class="form__result notice"
+              data-preview-result
+              data-shown="false"
+              role="status"
+              tabindex="-1"
+            >
+              <span class="mono">Not sent</span>
+              <span>
+                Nothing was submitted. This page is a design preview with no form
+                backend. Email
+                <a href="mailto:info@myshipfront.com">info@myshipfront.com</a> or
+                visit 1933 S. Broadway, Los Angeles, CA 90007.
+              </span>
+            </div>
+          </form>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div class="shell">
+        <div class="footer__grid">
+          <div class="footer__col">
+            <h2 class="display">You Sell. We Ship.</h2>
+            <p class="footer__blurb">
+              Warehousing &amp; Fulfillment Solutions in downtown Los Angeles.
+            </p>
+          </div>
+
+          <div class="footer__col">
+            <h3>Pages</h3>
+            <ul>
+              <li><a href="index.html">Home</a></li>
+              <li><a href="get-a-quote.html">Get a Quote</a></li>
+              <li><a href="contact.html">Contact</a></li>
+            </ul>
+          </div>
+
+          <div class="footer__col">
+            <h3>Visit</h3>
+            <ul>
+              <li><p>Shipfront</p></li>
+              <li><p>1933 S. Broadway</p></li>
+              <li><p>Los Angeles, CA 90007</p></li>
+              <li>
+                <a href="mailto:info@myshipfront.com">info@myshipfront.com</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="footer__base">
+          <span>Built by David T Phung.</span>
+          <span>Shipfront &middot; THE NETWORK</span>
+        </div>
+      </div>
+    </footer>
+
+    <script src="assets/js/site.js" defer></script>
+  </body>
+</html>
