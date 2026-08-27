@@ -1,0 +1,673 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Shipfront &middot; THE NETWORK &middot; Warehousing &amp; Fulfillment Solutions</title>
+    <meta
+      name="description"
+      content="Shipfront helps eCommerce merchants scale by taking care of their logistics needs, so that they can focus on growing their business. Warehousing and fulfillment in downtown Los Angeles."
+    />
+    <meta name="color-scheme" content="dark light" />
+    <meta name="theme-color" content="#07111e" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;500;600&family=JetBrains+Mono:wght@400;500;600&display=swap"
+    />
+    <link rel="stylesheet" href="assets/css/site.css" />
+    <link rel="stylesheet" href="assets/css/network.css" />
+    <noscript>
+      <style>
+        .panel {
+          grid-area: auto;
+          opacity: 1;
+          transform: none;
+          pointer-events: auto;
+          padding-block: 0.75rem;
+          border-top: 1px solid var(--night-line);
+        }
+        .graph__seg {
+          opacity: 0.8;
+        }
+        .network {
+          height: auto;
+        }
+        .network__stage {
+          position: static;
+          height: auto;
+        }
+        .graph {
+          height: auto;
+          aspect-ratio: 1200 / 560;
+        }
+        .graph__svg {
+          height: auto;
+        }
+        .token,
+        .mtoken,
+        .rail {
+          display: none;
+        }
+        [data-reveal] {
+          opacity: 1;
+          transform: none;
+        }
+      </style>
+    </noscript>
+  </head>
+
+  <body>
+    <a class="skip" href="#main">Skip to content</a>
+
+    <header class="nav">
+      <div class="shell nav__inner">
+        <a class="wordmark" href="index.html">
+          <b>SHIPFRONT</b>
+          <span>THE NETWORK</span>
+        </a>
+
+        <button
+          class="nav__toggle"
+          type="button"
+          aria-expanded="false"
+          aria-controls="nav-sheet"
+          data-nav-toggle
+        >
+          <span data-nav-label>Menu</span>
+        </button>
+
+        <nav class="nav__links" id="nav-sheet" aria-label="Primary" data-nav-sheet>
+          <a class="nav__link" href="index.html" aria-current="page">Home</a>
+          <a class="nav__link" href="#network">The Network</a>
+          <a class="nav__link" href="#services">Services</a>
+          <a class="nav__link" href="contact.html">Contact</a>
+          <a class="btn" href="get-a-quote.html">Get a Quote</a>
+        </nav>
+      </div>
+    </header>
+
+    <main id="main">
+      <!-- ============ HERO ============ -->
+      <section class="hero">
+        <div class="shell hero__grid">
+          <div class="hero__meta">
+            <p class="eyebrow">Warehousing &amp; Fulfillment Solutions</p>
+            <h1 class="display display--xl">
+              <span class="line">You Sell. We Ship.</span>
+              <span class="line line--signal">eCommerce at Scale</span>
+            </h1>
+          </div>
+
+          <div class="hero__meta">
+            <p class="lede">
+              Shipfront helps eCommerce merchants scale by taking care of their
+              logistics needs, so that they can focus on growing their business.
+            </p>
+            <div class="hero__actions">
+              <a class="btn btn--lg" href="get-a-quote.html">Get a Quote</a>
+              <a class="btn btn--ghost btn--lg" href="#network">See the Network</a>
+            </div>
+            <ul class="hero__ticker">
+              <li>Inbound</li>
+              <li>Kitting</li>
+              <li>Storage</li>
+              <li>FBA Prep</li>
+              <li>Outbound</li>
+              <li>Last-Mile Delivery</li>
+              <li>Same-Day Delivery</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============ THE NETWORK ============ -->
+      <section class="network" id="network" data-playing="false" data-network>
+        <div class="shell network__stage">
+          <div class="network__head">
+            <div class="network__headrow">
+              <p class="eyebrow">Shipfront Network</p>
+              <span class="signal">
+                <span class="signal__dot" aria-hidden="true"></span>
+                Order signal
+              </span>
+            </div>
+            <h2 class="display display--l">How Shipfront moves with you</h2>
+            <p class="network__disclaimer">
+              Illustrative workflow. Not live tracking data.
+            </p>
+          </div>
+
+          <!-- desktop graph -->
+          <div class="graph">
+            <svg
+              class="graph__svg"
+              viewBox="0 0 1200 560"
+              preserveAspectRatio="xMidYMid meet"
+              role="group"
+              aria-labelledby="network-title network-note"
+            >
+              <title id="network-title">
+                Illustrative Shipfront order route through six stages: store,
+                inventory, fulfillment, quality check, carrier, customer.
+              </title>
+              <desc id="network-note">
+                Each stage is selectable. Selecting a stage shows the same
+                description that is listed below the graph.
+              </desc>
+
+              <g class="graph__grid" aria-hidden="true">
+                <line x1="0" y1="140" x2="1200" y2="140" />
+                <line x1="0" y1="290" x2="1200" y2="290" />
+                <line x1="0" y1="440" x2="1200" y2="440" />
+              </g>
+
+              <!-- full route, used for structure and for token travel -->
+              <path
+                class="graph__route"
+                data-route
+                d="M110,430 C190,430 226,322 306,322 C386,322 422,386 502,386 C582,386 618,250 698,250 C778,250 814,306 894,306 C974,306 1010,168 1090,168"
+                aria-hidden="true"
+              />
+
+              <!-- lit segments -->
+              <path class="graph__seg" data-seg data-lit="false" d="M110,430 C190,430 226,322 306,322" aria-hidden="true" />
+              <path class="graph__seg" data-seg data-lit="false" d="M306,322 C386,322 422,386 502,386" aria-hidden="true" />
+              <path class="graph__seg" data-seg data-lit="false" d="M502,386 C582,386 618,250 698,250" aria-hidden="true" />
+              <path class="graph__seg" data-seg data-lit="false" d="M698,250 C778,250 814,306 894,306" aria-hidden="true" />
+              <path class="graph__seg" data-seg data-lit="false" d="M894,306 C974,306 1010,168 1090,168" aria-hidden="true" />
+
+              <!-- order token -->
+              <g class="token" data-token transform="translate(110 430)" aria-hidden="true">
+                <rect class="token__glow" x="-15" y="-15" width="30" height="30" rx="8" />
+                <rect class="token__body" x="-6" y="-6" width="12" height="12" rx="2.5" />
+              </g>
+
+              <!-- nodes -->
+              <g
+                class="gnode"
+                data-node
+                data-active="false"
+                role="button"
+                tabindex="0"
+                aria-pressed="false"
+                aria-describedby="copy-1"
+                transform="translate(110 430)"
+              >
+                <title>Store</title>
+                <circle class="gnode__halo" r="34" />
+                <circle class="gnode__ring" r="17" />
+                <circle class="gnode__core" r="6" />
+                <text class="gnode__index" y="-52" text-anchor="middle">01</text>
+                <text class="gnode__label" y="-32" text-anchor="middle">Store</text>
+                <circle class="gnode__hit" r="30" />
+              </g>
+
+              <g
+                class="gnode"
+                data-node
+                data-active="false"
+                role="button"
+                tabindex="0"
+                aria-pressed="false"
+                aria-describedby="copy-2"
+                transform="translate(306 322)"
+              >
+                <title>Inventory</title>
+                <circle class="gnode__halo" r="34" />
+                <circle class="gnode__ring" r="17" />
+                <circle class="gnode__core" r="6" />
+                <text class="gnode__index" y="-52" text-anchor="middle">02</text>
+                <text class="gnode__label" y="-32" text-anchor="middle">Inventory</text>
+                <circle class="gnode__hit" r="30" />
+              </g>
+
+              <g
+                class="gnode"
+                data-node
+                data-active="false"
+                role="button"
+                tabindex="0"
+                aria-pressed="false"
+                aria-describedby="copy-3"
+                transform="translate(502 386)"
+              >
+                <title>Fulfillment</title>
+                <circle class="gnode__halo" r="34" />
+                <circle class="gnode__ring" r="17" />
+                <circle class="gnode__core" r="6" />
+                <text class="gnode__index" y="-52" text-anchor="middle">03</text>
+                <text class="gnode__label" y="-32" text-anchor="middle">Fulfillment</text>
+                <circle class="gnode__hit" r="30" />
+              </g>
+
+              <g
+                class="gnode"
+                data-node
+                data-active="false"
+                role="button"
+                tabindex="0"
+                aria-pressed="false"
+                aria-describedby="copy-4"
+                transform="translate(698 250)"
+              >
+                <title>Quality check</title>
+                <circle class="gnode__halo" r="34" />
+                <circle class="gnode__ring" r="17" />
+                <circle class="gnode__core" r="6" />
+                <text class="gnode__index" y="-52" text-anchor="middle">04</text>
+                <text class="gnode__label" y="-32" text-anchor="middle">Quality check</text>
+                <circle class="gnode__hit" r="30" />
+              </g>
+
+              <g
+                class="gnode"
+                data-node
+                data-active="false"
+                role="button"
+                tabindex="0"
+                aria-pressed="false"
+                aria-describedby="copy-5"
+                transform="translate(894 306)"
+              >
+                <title>Carrier</title>
+                <circle class="gnode__halo" r="34" />
+                <circle class="gnode__ring" r="17" />
+                <circle class="gnode__core" r="6" />
+                <text class="gnode__index" y="-52" text-anchor="middle">05</text>
+                <text class="gnode__label" y="-32" text-anchor="middle">Carrier</text>
+                <circle class="gnode__hit" r="30" />
+              </g>
+
+              <g
+                class="gnode"
+                data-node
+                data-active="false"
+                role="button"
+                tabindex="0"
+                aria-pressed="false"
+                aria-describedby="copy-6"
+                transform="translate(1090 168)"
+              >
+                <title>Customer</title>
+                <circle class="gnode__halo" r="34" />
+                <circle class="gnode__ring" r="17" />
+                <circle class="gnode__core" r="6" />
+                <text class="gnode__index" y="-52" text-anchor="middle">06</text>
+                <text class="gnode__label" y="-32" text-anchor="middle">Customer</text>
+                <circle class="gnode__hit" r="30" />
+              </g>
+            </svg>
+          </div>
+
+          <!-- desktop readout -->
+          <div class="network__readout">
+            <div class="panel" data-panel data-active="false">
+              <div class="panel__top">
+                <span class="panel__step">Stage 01</span>
+                <h3 class="panel__name">Store</h3>
+              </div>
+              <ul class="panel__tags">
+                <li>Integrations</li>
+              </ul>
+              <p class="panel__copy" id="copy-1">
+                Through the WMS, Shipfront integrates with partners across the
+                supply chain ecosystem - from eCommerce platforms to same-day
+                delivery services.
+              </p>
+            </div>
+
+            <div class="panel" data-panel data-active="false">
+              <div class="panel__top">
+                <span class="panel__step">Stage 02</span>
+                <h3 class="panel__name">Inventory</h3>
+              </div>
+              <ul class="panel__tags">
+                <li>Inbound</li>
+                <li>Storage</li>
+              </ul>
+              <p class="panel__copy" id="copy-2">
+                Our inventory management system tracks all items across every SKU
+                to know where they are located, how long they have been there, and
+                the quantity on hand.
+              </p>
+            </div>
+
+            <div class="panel" data-panel data-active="false">
+              <div class="panel__top">
+                <span class="panel__step">Stage 03</span>
+                <h3 class="panel__name">Fulfillment</h3>
+              </div>
+              <ul class="panel__tags">
+                <li>Kitting</li>
+                <li>FBA Prep</li>
+              </ul>
+              <p class="panel__copy" id="copy-3">
+                We build custom workflows to pick, pack, label, and ship your
+                products exactly how you would like.
+              </p>
+            </div>
+
+            <div class="panel" data-panel data-active="false">
+              <div class="panel__top">
+                <span class="panel__step">Stage 04</span>
+                <h3 class="panel__name">Quality check</h3>
+              </div>
+              <ul class="panel__tags">
+                <li>Pick</li>
+                <li>Pack</li>
+                <li>Label</li>
+              </ul>
+              <p class="panel__copy" id="copy-4">
+                We get your products to your customers, quickly and accurately.
+              </p>
+            </div>
+
+            <div class="panel" data-panel data-active="false">
+              <div class="panel__top">
+                <span class="panel__step">Stage 05</span>
+                <h3 class="panel__name">Carrier</h3>
+              </div>
+              <ul class="panel__tags">
+                <li>Outbound</li>
+              </ul>
+              <p class="panel__copy" id="copy-5">
+                Working with any carrier across traditional partners, as well as
+                the most innovative companies in last-mile and same-day delivery.
+              </p>
+            </div>
+
+            <div class="panel" data-panel data-active="false">
+              <div class="panel__top">
+                <span class="panel__step">Stage 06</span>
+                <h3 class="panel__name">Customer</h3>
+              </div>
+              <ul class="panel__tags">
+                <li>Last-Mile Delivery</li>
+                <li>Same-Day Delivery</li>
+              </ul>
+              <p class="panel__copy" id="copy-6">
+                Not only do we inbound your products efficiently, we also deliver
+                them quickly to your customers through our strong carrier and
+                same-day delivery integrations.
+              </p>
+            </div>
+          </div>
+
+          <div class="rail" aria-hidden="true">
+            <span class="rail__count">Stage <b data-rail-now>01</b> / 06</span>
+            <span class="rail__track">
+              <span class="rail__fill" data-rail-fill></span>
+            </span>
+            <span class="rail__count">Route</span>
+          </div>
+
+          <!-- mobile vertical steps -->
+          <div class="network__steps" data-steps>
+            <span class="mtoken" data-mtoken aria-hidden="true"></span>
+
+            <ol class="steps">
+            <li class="step">
+              <div class="step__top">
+                <span class="step__step">01</span>
+                <h3 class="step__name">Store</h3>
+              </div>
+              <ul class="step__tags">
+                <li>Integrations</li>
+              </ul>
+              <p class="step__copy">
+                Through the WMS, Shipfront integrates with partners across the
+                supply chain ecosystem - from eCommerce platforms to same-day
+                delivery services.
+              </p>
+            </li>
+
+            <li class="step">
+              <div class="step__top">
+                <span class="step__step">02</span>
+                <h3 class="step__name">Inventory</h3>
+              </div>
+              <ul class="step__tags">
+                <li>Inbound</li>
+                <li>Storage</li>
+              </ul>
+              <p class="step__copy">
+                Our inventory management system tracks all items across every SKU
+                to know where they are located, how long they have been there, and
+                the quantity on hand.
+              </p>
+            </li>
+
+            <li class="step">
+              <div class="step__top">
+                <span class="step__step">03</span>
+                <h3 class="step__name">Fulfillment</h3>
+              </div>
+              <ul class="step__tags">
+                <li>Kitting</li>
+                <li>FBA Prep</li>
+              </ul>
+              <p class="step__copy">
+                We build custom workflows to pick, pack, label, and ship your
+                products exactly how you would like.
+              </p>
+            </li>
+
+            <li class="step">
+              <div class="step__top">
+                <span class="step__step">04</span>
+                <h3 class="step__name">Quality check</h3>
+              </div>
+              <ul class="step__tags">
+                <li>Pick</li>
+                <li>Pack</li>
+                <li>Label</li>
+              </ul>
+              <p class="step__copy">
+                We get your products to your customers, quickly and accurately.
+              </p>
+            </li>
+
+            <li class="step">
+              <div class="step__top">
+                <span class="step__step">05</span>
+                <h3 class="step__name">Carrier</h3>
+              </div>
+              <ul class="step__tags">
+                <li>Outbound</li>
+              </ul>
+              <p class="step__copy">
+                Working with any carrier across traditional partners, as well as
+                the most innovative companies in last-mile and same-day delivery.
+              </p>
+            </li>
+
+            <li class="step">
+              <div class="step__top">
+                <span class="step__step">06</span>
+                <h3 class="step__name">Customer</h3>
+              </div>
+              <ul class="step__tags">
+                <li>Last-Mile Delivery</li>
+                <li>Same-Day Delivery</li>
+              </ul>
+              <p class="step__copy">
+                Not only do we inbound your products efficiently, we also deliver
+                them quickly to your customers through our strong carrier and
+                same-day delivery integrations.
+              </p>
+            </li>
+            </ol>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============ SERVICES (paper) ============ -->
+      <section class="section paper" id="services">
+        <div class="shell svc">
+          <div class="svc__head" data-reveal>
+            <p class="eyebrow eyebrow--ink">Capabilities</p>
+            <h2 class="display display--l">
+              Warehousing, fulfillment, and the integrations behind them
+            </h2>
+          </div>
+
+          <ul class="svc__list" data-reveal-group>
+            <li class="card" data-reveal>
+              <span class="card__index">01</span>
+              <h3>WAREHOUSING</h3>
+              <p class="prose">
+                Our warehouses provide the necessary space, security,
+                temperature-control, and FDA compliant capabilities to store your
+                products before shipping them to customers. Our inventory
+                management system tracks all items across every SKU to know where
+                they are located, how long they have been there, and the quantity
+                on hand. We actively forecast inventory demand to keep your supply
+                chain running optimally.
+              </p>
+            </li>
+
+            <li class="card" data-reveal>
+              <span class="card__index">02</span>
+              <h3>FULFILLMENT</h3>
+              <p class="prose">
+                We build custom workflows to pick, pack, label, and ship your
+                products exactly how you would like. That means working with any
+                carrier across traditional partners, as well as the most
+                innovative companies in last-mile and same-day delivery. We get
+                your products to your customers, quickly and accurately.
+              </p>
+              <p class="card__note">
+                Inbound | Kitting | Storage | FBA Prep | Outbound | Last-Mile
+                Delivery | Same-Day Delivery
+              </p>
+            </li>
+
+            <li class="card" data-reveal>
+              <span class="card__index">03</span>
+              <h3>ECOMMERCE INTEGRATIONS</h3>
+              <p class="prose">
+                Shipfront is built on the Flowspace Warehouse Management System
+                (WMS) - an innovative software solution for managing the needs of
+                today&rsquo;s warehousing &amp; fulfillment operations. Through
+                the WMS, Shipfront integrates with partners across the supply
+                chain ecosystem - from eCommerce platforms to same-day delivery
+                services.
+              </p>
+            </li>
+
+            <li class="card" data-reveal>
+              <span class="card__index">04</span>
+              <h3>LOCATION IS EVERYTHING</h3>
+              <p class="prose">
+                Situated in downtown L.A., next to the 10, 110, and 101 freeways -
+                Shipfront is perfectly positioned to serve your eCommerce
+                business. Not only do we inbound your products efficiently, we
+                also deliver them quickly to your customers through our strong
+                carrier and same-day delivery integrations.
+              </p>
+              <p class="card__note card__note--mute">
+                Easy access to interstate freeways, courier depots, train
+                stations, and airports
+              </p>
+            </li>
+          </ul>
+
+          <hr class="rule" />
+
+          <div class="loc" data-reveal>
+            <div class="svc__head">
+              <p class="eyebrow eyebrow--ink">Downtown Los Angeles</p>
+              <h2 class="display display--m">
+                Next to the 10, 110, and 101 freeways
+              </h2>
+            </div>
+            <ul class="loc__routes">
+              <li><b>10</b> Interstate</li>
+              <li><b>110</b> Interstate</li>
+              <li><b>101</b> Highway</li>
+              <li>
+                <b>DTLA</b> 1933 S. Broadway, Los Angeles, CA 90007
+              </li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============ CUSTOMER SUCCESS ============ -->
+      <section class="section night-deep">
+        <div class="shell band" data-reveal-group>
+          <div data-reveal>
+            <p class="eyebrow">Customer success</p>
+          </div>
+          <p class="prose" data-reveal>
+            Customer-success is our obsession, with dedicated account managers for
+            every merchant and industry-leading capabilities across temperature
+            control, same-day delivery, FBA prep, and much more.
+          </p>
+        </div>
+      </section>
+
+      <!-- ============ CTA ============ -->
+      <section class="section">
+        <div class="shell cta" data-reveal>
+          <p class="eyebrow">Fast &amp; Easy Quotes</p>
+          <h2 class="display display--l">
+            Tell us what you ship. We will take it from there.
+          </h2>
+          <p class="lede">
+            Please take a moment to give us some information. We have expert
+            agents standing by to take care of your logistics needs.
+          </p>
+          <div class="hero__actions">
+            <a class="btn btn--lg" href="get-a-quote.html">Get a Quote</a>
+            <a class="btn btn--ghost btn--lg" href="contact.html">Contact</a>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div class="shell">
+        <div class="footer__grid">
+          <div class="footer__col">
+            <h2 class="display">You Sell. We Ship.</h2>
+            <p class="footer__blurb">
+              Warehousing &amp; Fulfillment Solutions in downtown Los Angeles.
+            </p>
+          </div>
+
+          <div class="footer__col">
+            <h3>Pages</h3>
+            <ul>
+              <li><a href="index.html">Home</a></li>
+              <li><a href="get-a-quote.html">Get a Quote</a></li>
+              <li><a href="contact.html">Contact</a></li>
+            </ul>
+          </div>
+
+          <div class="footer__col">
+            <h3>Visit</h3>
+            <ul>
+              <li><p>Shipfront</p></li>
+              <li><p>1933 S. Broadway</p></li>
+              <li><p>Los Angeles, CA 90007</p></li>
+              <li>
+                <a href="mailto:info@myshipfront.com">info@myshipfront.com</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="footer__base">
+          <span>Built by David T Phung.</span>
+          <span>Shipfront &middot; THE NETWORK</span>
+        </div>
+      </div>
+    </footer>
+
+    <script src="assets/js/site.js" defer></script>
+    <script src="assets/js/network.js" defer></script>
+  </body>
+</html>
