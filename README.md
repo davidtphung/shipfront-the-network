@@ -8,6 +8,8 @@ navigable node graph with a traveling order token.
 
 Static HTML, CSS and vanilla JS. No build step, no dependencies, no backend.
 
+Live: <https://davidtphung.github.io/shipfront-the-network/>
+
 ## Pages
 
 | Page          | File               |
@@ -25,6 +27,12 @@ python3 -m http.server 43317
 ```
 
 Then open <http://127.0.0.1:43317>.
+
+## Deploying
+
+GitHub Pages serves the site from the `gh-pages` branch. The workflow in
+`.github/workflows/pages.yml` mirrors `main` onto `gh-pages` on every push, so
+publishing is just a push to `main`.
 
 ## How THE NETWORK behaves
 
