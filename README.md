@@ -8,17 +8,26 @@ navigable node graph with a traveling order token.
 
 Static HTML, CSS and vanilla JS. No build step, no dependencies, no backend.
 
+## Type
+
+Space Grotesk carries everything: display, headings and body. JetBrains Mono is
+scoped to the terminal roles only, meaning the graph node labels and indices,
+the stage and route counters, and the small uppercase micro labels such as
+eyebrows, chips and field labels. No serif anywhere.
+
 ## Paint
 
 The ground is true black `#000000`. Each section lays a subtle wash of that
 same black over it, a radial lift to about `#131313` and back down, plus a
 whisper of warm at the far edge like heat on a dock. There is no colour field.
 
-Warm `#cf8f5c` is an accent, never a surface. It carries the section eyebrows,
-one filled call to action, the active node, and the lit route hairline.
-Everything else, including the progress meter, the stage tags and the routes
-strip, is neutral white on black. A pixel sample of a rendered viewport reads
-an average of about `rgb(19, 18, 17)` with zero blue dominant pixels.
+Terminal orange `#ff6a00` is the only accent, and it is an accent rather than
+a surface. It carries the section eyebrows, the filled Get a Quote plates, the
+four tile Get a Quote paths, the active graph node, the lit route hairline, the
+route numbers, the stage counters and the focus rings. Filled plates are always
+black on orange, never white on orange. Everything else is neutral white on
+black. A pixel sample of a rendered viewport reads an average of about
+`rgb(19, 17, 15)` with zero blue dominant pixels and about one percent orange.
 
 ## Capabilities tiles
 
