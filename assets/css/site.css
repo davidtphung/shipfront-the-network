@@ -63,7 +63,9 @@ body {
   font-synthesis-weight: none;
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
-  overflow-x: hidden;
+  /* No overflow-x here on purpose: a scroll container on body breaks
+     position: sticky for the network journey. Bleeding decoration is
+     clipped by its own section instead. */
 }
 
 img,
