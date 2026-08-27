@@ -4,21 +4,26 @@
 
 .network {
   position: relative;
-  background: var(--night);
-  border-block: 1px solid var(--night-line);
+  background: var(--ground);
+  border-block: 1px solid var(--hair);
 }
 
 .network::before {
   content: "";
   position: absolute;
   inset: 0;
-  background: radial-gradient(
-      70% 55% at 50% 42%,
-      rgba(92, 225, 242, 0.09),
-      transparent 72%
-    ),
-    linear-gradient(180deg, rgba(4, 11, 20, 0.7), transparent 22%, rgba(4, 11, 20, 0.7));
   pointer-events: none;
+  background: radial-gradient(
+      78% 58% at 50% 44%,
+      #121212 0%,
+      #0a0a0a 46%,
+      #000000 76%
+    ),
+    radial-gradient(
+      46% 48% at 96% 96%,
+      rgba(207, 143, 92, 0.065),
+      transparent 70%
+    );
 }
 
 /* ---------- stage ---------- */
@@ -52,7 +57,7 @@
 }
 
 .network__head h2 {
-  color: var(--on-night);
+  color: var(--type);
   max-width: 22ch;
 }
 
@@ -61,7 +66,7 @@
   font-size: 0.6875rem;
   letter-spacing: 0.16em;
   text-transform: uppercase;
-  color: var(--on-night-faint);
+  color: var(--type-faint);
   margin: 0;
 }
 
@@ -75,8 +80,8 @@
   font-size: 0.6875rem;
   letter-spacing: 0.18em;
   text-transform: uppercase;
-  color: var(--signal);
-  border: 1px solid var(--signal-soft);
+  color: var(--ember);
+  border: 1px solid var(--ember-soft);
   border-radius: 999px;
   padding: 0.4rem 0.85rem;
 }
@@ -85,7 +90,7 @@
   width: 0.4rem;
   height: 0.4rem;
   border-radius: 50%;
-  background: var(--signal);
+  background: var(--ember);
   will-change: transform, opacity;
 }
 
@@ -126,23 +131,23 @@
 }
 
 .graph__route {
-  stroke: rgba(133, 176, 209, 0.26);
+  stroke: rgba(255, 255, 255, 0.17);
   stroke-width: 1.5;
 }
 
 .graph__seg {
-  stroke: var(--signal);
-  stroke-width: 1.5;
+  stroke: var(--ember);
+  stroke-width: 1.1;
   opacity: 0;
   transition: opacity 0.55s var(--spring);
 }
 
 .graph__seg[data-lit="true"] {
-  opacity: 0.8;
+  opacity: 0.44;
 }
 
 .graph__grid line {
-  stroke: rgba(133, 176, 209, 0.07);
+  stroke: rgba(255, 255, 255, 0.045);
   stroke-width: 1;
 }
 
@@ -157,7 +162,7 @@
 }
 
 .gnode__halo {
-  fill: var(--signal);
+  fill: var(--ember);
   opacity: 0;
   transform-box: fill-box;
   transform-origin: center;
@@ -168,7 +173,7 @@
 
 .gnode__ring {
   fill: none;
-  stroke: rgba(133, 176, 209, 0.35);
+  stroke: rgba(255, 255, 255, 0.24);
   stroke-width: 1.25;
   transform-box: fill-box;
   transform-origin: center;
@@ -177,9 +182,10 @@
 }
 
 .gnode__core {
-  fill: var(--night);
-  stroke: var(--signal);
+  fill: var(--ground);
+  stroke: rgba(255, 255, 255, 0.55);
   stroke-width: 1.5;
+  transition: transform 0.5s var(--spring), stroke 0.3s linear;
   transform-box: fill-box;
   transform-origin: center;
   will-change: transform;
@@ -193,7 +199,7 @@
   font-size: 14px;
   letter-spacing: 1.8px;
   text-transform: uppercase;
-  fill: var(--on-night-mute);
+  fill: var(--type-mute);
   transition: fill 0.3s linear, opacity 0.3s linear;
 }
 
@@ -201,19 +207,19 @@
   font-family: var(--mono);
   font-size: 11.5px;
   letter-spacing: 1.5px;
-  fill: var(--on-night-faint);
+  fill: var(--type-faint);
   transition: fill 0.3s linear;
 }
 
 .gnode:hover .gnode__ring,
 .gnode:focus-visible .gnode__ring {
   transform: scale(1.18);
-  stroke: var(--signal-soft);
+  stroke: var(--ember-soft);
 }
 
 .gnode:hover .gnode__label,
 .gnode:focus-visible .gnode__label {
-  fill: var(--on-night);
+  fill: var(--type);
 }
 
 .gnode:active .gnode__core {
@@ -223,25 +229,26 @@
 }
 
 .gnode[data-active="true"] .gnode__halo {
-  opacity: 0.16;
+  opacity: 0.09;
   transform: scale(1);
 }
 
 .gnode[data-active="true"] .gnode__ring {
   transform: scale(1.32);
-  stroke: var(--signal-soft);
+  stroke: var(--ember-soft);
 }
 
 .gnode[data-active="true"] .gnode__core {
   transform: scale(1.22);
+  stroke: var(--ember);
 }
 
 .gnode[data-active="true"] .gnode__label {
-  fill: var(--signal);
+  fill: var(--ember);
 }
 
 .gnode[data-active="true"] .gnode__index {
-  fill: var(--signal);
+  fill: var(--ember);
 }
 
 .gnode:focus-visible {
@@ -249,7 +256,7 @@
 }
 
 .gnode:focus-visible .gnode__hit {
-  stroke: var(--signal);
+  stroke: var(--ember);
   stroke-width: 1.5;
   stroke-dasharray: 3 3;
 }
@@ -262,11 +269,11 @@
 }
 
 .token__body {
-  fill: var(--signal);
+  fill: var(--ember);
 }
 
 .token__glow {
-  fill: var(--signal);
+  fill: var(--ember);
   opacity: 0.2;
 }
 
@@ -278,7 +285,7 @@
   gap: 0.9rem;
   min-height: clamp(8.5rem, 13vh, 10.5rem);
   padding-top: clamp(0.85rem, 1.5vw, 1.25rem);
-  border-top: 1px solid var(--night-line);
+  border-top: 1px solid var(--hair);
 }
 
 .panel {
@@ -309,7 +316,7 @@
   font-family: var(--mono);
   font-size: 0.6875rem;
   letter-spacing: 0.2em;
-  color: var(--signal);
+  color: var(--type-faint);
 }
 
 .panel__name {
@@ -319,7 +326,7 @@
   letter-spacing: -0.03em;
   line-height: 1;
   margin: 0;
-  color: var(--on-night);
+  color: var(--type);
 }
 
 .panel__tags {
@@ -336,8 +343,8 @@
   font-size: 0.625rem;
   letter-spacing: 0.14em;
   text-transform: uppercase;
-  color: var(--signal);
-  border: 1px solid var(--signal-soft);
+  color: var(--type-mute);
+  border: 1px solid var(--hair);
   border-radius: 999px;
   padding: 0.25rem 0.55rem;
 }
@@ -346,7 +353,7 @@
   margin: 0;
   font-size: clamp(1rem, 1.35vw, 1.1875rem);
   line-height: 1.55;
-  color: var(--on-night-mute);
+  color: var(--type-mute);
 }
 
 /* ---------- progress rail ---------- */
@@ -361,14 +368,14 @@
   position: relative;
   flex: 1;
   height: 1px;
-  background: var(--night-line-strong);
+  background: var(--hair-strong);
   overflow: hidden;
 }
 
 .rail__fill {
   position: absolute;
   inset: 0;
-  background: var(--signal);
+  background: rgba(255, 255, 255, 0.5);
   transform-origin: left center;
   transform: scaleX(0);
   will-change: transform;
@@ -379,12 +386,12 @@
   font-family: var(--mono);
   font-size: 0.6875rem;
   letter-spacing: 0.18em;
-  color: var(--on-night-faint);
+  color: var(--type-faint);
   white-space: nowrap;
 }
 
 .rail__count b {
-  color: var(--signal);
+  color: var(--type);
   font-weight: 500;
 }
 
@@ -472,11 +479,7 @@
     top: clamp(2.4rem, 6vw, 2.9rem);
     bottom: 3.5rem;
     width: 1px;
-    background: linear-gradient(
-      180deg,
-      var(--signal-soft),
-      var(--night-line-strong)
-    );
+    background: linear-gradient(180deg, var(--ember-soft), var(--hair));
   }
 
   .mtoken {
@@ -486,7 +489,7 @@
     width: 0.8125rem;
     height: 0.8125rem;
     border-radius: 2px;
-    background: var(--signal);
+    background: var(--ember);
     opacity: 0;
     will-change: transform, opacity;
     pointer-events: none;
@@ -505,8 +508,8 @@
     width: 0.875rem;
     height: 0.875rem;
     border-radius: 50%;
-    border: 1.5px solid var(--signal);
-    background: var(--night);
+    border: 1.5px solid rgba(255, 255, 255, 0.34);
+    background: var(--ground);
   }
 
   .step__top {
@@ -520,7 +523,7 @@
     font-family: var(--mono);
     font-size: 0.6875rem;
     letter-spacing: 0.2em;
-    color: var(--signal);
+    color: var(--type-faint);
   }
 
   .step__name {
@@ -530,7 +533,7 @@
     letter-spacing: -0.03em;
     line-height: 1;
     margin: 0;
-    color: var(--on-night);
+    color: var(--type);
   }
 
   .step__tags {
@@ -547,15 +550,15 @@
     font-size: 0.625rem;
     letter-spacing: 0.13em;
     text-transform: uppercase;
-    color: var(--signal);
-    border: 1px solid var(--signal-soft);
+    color: var(--type-mute);
+    border: 1px solid var(--hair);
     border-radius: 999px;
     padding: 0.22rem 0.5rem;
   }
 
   .step__copy {
     margin: 0.7rem 0 0;
-    color: var(--on-night-mute);
+    color: var(--type-mute);
     font-size: 1rem;
     line-height: 1.58;
   }
@@ -592,7 +595,7 @@
   }
 
   .graph__seg {
-    opacity: 0.8;
+    opacity: 0.44;
     transition: none;
   }
 
@@ -605,12 +608,12 @@
   }
 
   .gnode__halo {
-    opacity: 0.1;
+    opacity: 0.08;
     transform: scale(1);
   }
 
   .gnode__label {
-    fill: var(--on-night);
+    fill: var(--type);
   }
 
   .network__readout {
@@ -623,6 +626,6 @@
     transform: none;
     pointer-events: auto;
     padding-block: 0.9rem;
-    border-top: 1px solid var(--night-line);
+    border-top: 1px solid var(--hair);
   }
 }
