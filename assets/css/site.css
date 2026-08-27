@@ -18,13 +18,13 @@
   --type-mute: #9d9890;
   --type-faint: #6d6862;
 
-  /* quiet warm. accent only: hairlines, one fill, node signal */
-  --ember: #cf8f5c;
-  --ember-soft: rgba(207, 143, 92, 0.3);
-  --ember-faint: rgba(207, 143, 92, 0.07);
+  /* Terminal signal. accent only: hairlines, one fill, node signal */
+  --signal: #ff6a00;
+  --signal-soft: rgba(255, 106, 0, 0.34);
+  --signal-faint: rgba(255, 106, 0, 0.08);
 
-  --display: "Inter Tight", "Inter", -apple-system, BlinkMacSystemFont,
-    "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+  --display: "Space Grotesk", -apple-system, BlinkMacSystemFont, "Segoe UI",
+    "Helvetica Neue", Arial, sans-serif;
   --mono: "JetBrains Mono", ui-monospace, "SFMono-Regular", "SF Mono",
     "Roboto Mono", Menlo, Consolas, monospace;
 
@@ -79,12 +79,12 @@ a {
 }
 
 ::selection {
-  background: var(--ember);
+  background: var(--signal);
   color: var(--ground);
 }
 
 :focus-visible {
-  outline: 2px solid var(--ember);
+  outline: 2px solid var(--signal);
   outline-offset: 3px;
   border-radius: 2px;
 }
@@ -97,15 +97,15 @@ a {
   letter-spacing: 0.22em;
   text-transform: uppercase;
   font-weight: 500;
-  color: var(--ember);
+  color: var(--signal);
   margin: 0;
 }
 
 .display {
   font-family: var(--display);
-  font-weight: 600;
+  font-weight: 700;
   letter-spacing: -0.035em;
-  line-height: 0.93;
+  line-height: 0.95;
   margin: 0;
   text-wrap: balance;
 }
@@ -169,7 +169,7 @@ a {
   top: 0;
   z-index: 200;
   padding: 0.6rem 1rem;
-  background: var(--ember);
+  background: var(--signal);
   color: var(--ground);
   font-family: var(--mono);
   font-size: 0.75rem;
@@ -226,7 +226,7 @@ a {
   pointer-events: none;
   background: radial-gradient(
     58% 62% at 100% 92%,
-    rgba(207, 143, 92, 0.08),
+    rgba(255, 106, 0, 0.055),
     transparent 68%
   );
 }
@@ -286,6 +286,14 @@ a {
   color: var(--type-faint);
 }
 
+/* the smallest phones cannot hold the mark, the sub label and the menu pill
+   on one line, and the mark must not wrap */
+@media (max-width: 26rem) {
+  .wordmark span {
+    display: none;
+  }
+}
+
 .nav__links {
   display: flex;
   align-items: center;
@@ -309,7 +317,7 @@ a {
 }
 
 .nav__link[aria-current="page"] {
-  color: var(--ember);
+  color: var(--signal);
 }
 
 .nav__toggle {
@@ -320,8 +328,8 @@ a {
 
 /* one warm fill carries every primary action */
 .btn {
-  --btn-bg: var(--ember);
-  --btn-fg: #0b0805;
+  --btn-bg: var(--signal);
+  --btn-fg: #000000;
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -382,7 +390,7 @@ a {
   font-size: 0.75rem;
   letter-spacing: 0.13em;
   text-transform: uppercase;
-  color: var(--type);
+  color: var(--signal);
   text-decoration: none;
   transition: border-color 0.25s linear, color 0.2s linear;
 }
@@ -396,8 +404,8 @@ a {
 
 .cta-link:hover,
 .cta-link:focus-visible {
-  color: var(--ember);
-  border-bottom-color: var(--ember-soft);
+  color: var(--signal);
+  border-bottom-color: var(--signal);
 }
 
 .cta-link:hover .arrow,
@@ -666,8 +674,8 @@ a {
 .loc__routes li b {
   font-size: 1.5rem;
   letter-spacing: -0.02em;
-  font-weight: 500;
-  color: var(--type);
+  font-weight: 700;
+  color: var(--signal);
   min-width: 3.25rem;
 }
 
@@ -768,7 +776,7 @@ a {
 .field input:focus,
 .field textarea:focus {
   outline: none;
-  border-color: var(--ember);
+  border-color: var(--signal);
   background: rgba(255, 255, 255, 0.05);
 }
 
@@ -782,24 +790,34 @@ a {
 
 .notice {
   display: flex;
-  gap: 0.75rem;
+  flex-wrap: wrap;
+  gap: 0.5rem 0.75rem;
   padding: 1rem 1.1rem;
   border: 1px solid var(--hair);
-  border-left: 3px solid var(--ember-soft);
+  border-left: 3px solid var(--signal-soft);
   border-radius: 3px;
-  background: var(--ember-faint);
+  background: var(--signal-faint);
   font-size: 0.9375rem;
   color: var(--type);
   max-width: 60ch;
+  min-width: 0;
+}
+
+.notice > span:last-child {
+  min-width: 0;
+  flex: 1 1 14rem;
+  overflow-wrap: anywhere;
 }
 
 .notice .mono {
-  color: var(--ember);
+  color: var(--signal);
   white-space: nowrap;
+  flex: none;
 }
 
 .form__result {
   grid-column: 1 / -1;
+  min-width: 0;
   opacity: 0;
   transform: translateY(6px);
   transition: opacity 0.35s linear, transform 0.5s var(--spring);
@@ -845,7 +863,7 @@ a {
   font-size: 0.6875rem;
   letter-spacing: 0.18em;
   text-transform: uppercase;
-  color: var(--ember);
+  color: var(--signal);
 }
 
 .dl dd {
@@ -901,7 +919,7 @@ a {
   font-size: 0.6875rem;
   letter-spacing: 0.18em;
   text-transform: uppercase;
-  color: var(--type-faint);
+  color: var(--signal);
   margin: 0 0 0.9rem;
   font-weight: 500;
 }
