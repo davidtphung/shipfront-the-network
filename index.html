@@ -8,8 +8,8 @@
       name="description"
       content="Shipfront helps eCommerce merchants scale by taking care of their logistics needs, so that they can focus on growing their business. Warehousing and fulfillment in downtown Los Angeles."
     />
-    <meta name="color-scheme" content="dark light" />
-    <meta name="theme-color" content="#07111e" />
+    <meta name="color-scheme" content="dark" />
+    <meta name="theme-color" content="#000000" />
     <link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -27,7 +27,7 @@
           transform: none;
           pointer-events: auto;
           padding-block: 0.75rem;
-          border-top: 1px solid var(--night-line);
+          border-top: 1px solid var(--hair);
         }
         .graph__seg {
           opacity: 0.8;
@@ -91,13 +91,13 @@
 
     <main id="main">
       <!-- ============ HERO ============ -->
-      <section class="hero">
+      <section class="hero wash wash--heat">
         <div class="shell hero__grid">
           <div class="hero__meta">
             <p class="eyebrow">Warehousing &amp; Fulfillment Solutions</p>
             <h1 class="display display--xl">
               <span class="line">You Sell. We Ship.</span>
-              <span class="line line--signal">eCommerce at Scale</span>
+              <span class="line line--dim">eCommerce at Scale</span>
             </h1>
           </div>
 
@@ -506,21 +506,30 @@
         </div>
       </section>
 
-      <!-- ============ SERVICES (paper) ============ -->
-      <section class="section paper" id="services">
+      <!-- ============ CAPABILITIES: image led tiles ============ -->
+      <section class="section wash wash--heat" id="services">
         <div class="shell svc">
           <div class="svc__head" data-reveal>
-            <p class="eyebrow eyebrow--ink">Capabilities</p>
+            <p class="eyebrow">Capabilities</p>
             <h2 class="display display--l">
               Warehousing, fulfillment, and the integrations behind them
             </h2>
           </div>
 
-          <ul class="svc__list" data-reveal-group>
-            <li class="card" data-reveal>
-              <span class="card__index">01</span>
+          <ul class="tiles" data-reveal-group>
+            <li class="tile" data-reveal>
+              <figure class="tile__still">
+                <img
+                  src="assets/images/fulfillment.jpg"
+                  width="800"
+                  height="1080"
+                  alt="Pallet racking aisle stacked to the ceiling with wrapped inventory"
+                  decoding="async"
+                />
+              </figure>
+              <span class="tile__index">01</span>
               <h3>WAREHOUSING</h3>
-              <p class="prose">
+              <p>
                 Our warehouses provide the necessary space, security,
                 temperature-control, and FDA compliant capabilities to store your
                 products before shipping them to customers. Our inventory
@@ -529,28 +538,56 @@
                 on hand. We actively forecast inventory demand to keep your supply
                 chain running optimally.
               </p>
+              <a class="cta-link" href="get-a-quote.html">
+                Get a Quote
+                <svg class="arrow" viewBox="0 0 9 9" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.25"><path d="M1 8 L8 1" /><path d="M2.5 1 H8 V6.5" /></svg>
+              </a>
             </li>
 
-            <li class="card" data-reveal>
-              <span class="card__index">02</span>
+            <li class="tile" data-reveal>
+              <figure class="tile__still">
+                <img
+                  src="assets/images/procurement.jpg"
+                  width="800"
+                  height="1080"
+                  alt="High angle pick floor of yellow bins and cartons under pallet racking"
+                  loading="lazy"
+                  decoding="async"
+                />
+              </figure>
+              <span class="tile__index">02</span>
               <h3>FULFILLMENT</h3>
-              <p class="prose">
+              <p>
                 We build custom workflows to pick, pack, label, and ship your
                 products exactly how you would like. That means working with any
                 carrier across traditional partners, as well as the most
                 innovative companies in last-mile and same-day delivery. We get
                 your products to your customers, quickly and accurately.
               </p>
-              <p class="card__note">
+              <p class="tile__note">
                 Inbound | Kitting | Storage | FBA Prep | Outbound | Last-Mile
                 Delivery | Same-Day Delivery
               </p>
+              <a class="cta-link" href="get-a-quote.html">
+                Get a Quote
+                <svg class="arrow" viewBox="0 0 9 9" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.25"><path d="M1 8 L8 1" /><path d="M2.5 1 H8 V6.5" /></svg>
+              </a>
             </li>
 
-            <li class="card" data-reveal>
-              <span class="card__index">03</span>
+            <li class="tile" data-reveal>
+              <figure class="tile__still">
+                <img
+                  src="assets/images/integration.jpg"
+                  width="800"
+                  height="1080"
+                  alt="Trailers parked in an ordered grid at a dock, seen from above"
+                  loading="lazy"
+                  decoding="async"
+                />
+              </figure>
+              <span class="tile__index">03</span>
               <h3>ECOMMERCE INTEGRATIONS</h3>
-              <p class="prose">
+              <p>
                 Shipfront is built on the Flowspace Warehouse Management System
                 (WMS) - an innovative software solution for managing the needs of
                 today&rsquo;s warehousing &amp; fulfillment operations. Through
@@ -558,22 +595,42 @@
                 chain ecosystem - from eCommerce platforms to same-day delivery
                 services.
               </p>
+              <a class="cta-link" href="get-a-quote.html">
+                Get a Quote
+                <svg class="arrow" viewBox="0 0 9 9" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.25"><path d="M1 8 L8 1" /><path d="M2.5 1 H8 V6.5" /></svg>
+              </a>
             </li>
 
-            <li class="card" data-reveal>
-              <span class="card__index">04</span>
-              <h3>LOCATION IS EVERYTHING</h3>
-              <p class="prose">
-                Situated in downtown L.A., next to the 10, 110, and 101 freeways -
-                Shipfront is perfectly positioned to serve your eCommerce
-                business. Not only do we inbound your products efficiently, we
-                also deliver them quickly to your customers through our strong
-                carrier and same-day delivery integrations.
-              </p>
-              <p class="card__note card__note--mute">
-                Easy access to interstate freeways, courier depots, train
-                stations, and airports
-              </p>
+            <li class="tile tile--wide" data-reveal>
+              <figure class="tile__still">
+                <img
+                  src="assets/images/logistics-usa.jpg"
+                  width="2400"
+                  height="1596"
+                  alt="A row of long hood freight tractors lined up at dusk"
+                  loading="lazy"
+                  decoding="async"
+                />
+              </figure>
+              <div class="tile__copy">
+                <span class="tile__index">04</span>
+                <h3>LOCATION IS EVERYTHING</h3>
+                <p>
+                  Situated in downtown L.A., next to the 10, 110, and 101 freeways
+                  - Shipfront is perfectly positioned to serve your eCommerce
+                  business. Not only do we inbound your products efficiently, we
+                  also deliver them quickly to your customers through our strong
+                  carrier and same-day delivery integrations.
+                </p>
+                <p class="tile__note">
+                  Easy access to interstate freeways, courier depots, train
+                  stations, and airports
+                </p>
+                <a class="cta-link" href="get-a-quote.html">
+                  Get a Quote
+                  <svg class="arrow" viewBox="0 0 9 9" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.25"><path d="M1 8 L8 1" /><path d="M2.5 1 H8 V6.5" /></svg>
+                </a>
+              </div>
             </li>
           </ul>
 
@@ -581,7 +638,7 @@
 
           <div class="loc" data-reveal>
             <div class="svc__head">
-              <p class="eyebrow eyebrow--ink">Downtown Los Angeles</p>
+              <p class="eyebrow">Downtown Los Angeles</p>
               <h2 class="display display--m">
                 Next to the 10, 110, and 101 freeways
               </h2>
@@ -590,16 +647,14 @@
               <li><b>10</b> Interstate</li>
               <li><b>110</b> Interstate</li>
               <li><b>101</b> Highway</li>
-              <li>
-                <b>DTLA</b> 1933 S. Broadway, Los Angeles, CA 90007
-              </li>
+              <li><b>DTLA</b> 1933 S. Broadway, Los Angeles, CA 90007</li>
             </ul>
           </div>
         </div>
       </section>
 
       <!-- ============ CUSTOMER SUCCESS ============ -->
-      <section class="section night-deep">
+      <section class="section plate">
         <div class="shell band" data-reveal-group>
           <div data-reveal>
             <p class="eyebrow">Customer success</p>
@@ -613,7 +668,7 @@
       </section>
 
       <!-- ============ CTA ============ -->
-      <section class="section">
+      <section class="section wash wash--heat">
         <div class="shell cta" data-reveal>
           <p class="eyebrow">Fast &amp; Easy Quotes</p>
           <h2 class="display display--l">
