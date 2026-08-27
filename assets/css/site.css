@@ -14,19 +14,16 @@
   --hair: rgba(255, 255, 255, 0.1);
   --hair-strong: rgba(255, 255, 255, 0.22);
 
-  --type: #f3f0ea;
-  --type-mute: #9d9890;
-  --type-faint: #6d6862;
+  /* White on black. Hierarchy is size, weight, tracking, line-height. */
+  --type: #FFFFFF;
 
-  /* Terminal signal. accent only: hairlines, one fill, node signal */
+  /* Terminal signal. accent only: one fill, eyebrows, node signal */
   --signal: #ff6a00;
   --signal-soft: rgba(255, 106, 0, 0.34);
   --signal-faint: rgba(255, 106, 0, 0.08);
 
   --display: "Space Grotesk", -apple-system, BlinkMacSystemFont, "Segoe UI",
     "Helvetica Neue", Arial, sans-serif;
-  --mono: "JetBrains Mono", ui-monospace, "SFMono-Regular", "SF Mono",
-    "Roboto Mono", Menlo, Consolas, monospace;
 
   --gutter: clamp(1.25rem, 5vw, 5rem);
   --measure: 68ch;
@@ -92,11 +89,11 @@ a {
 /* ---------- type ---------- */
 
 .eyebrow {
-  font-family: var(--mono);
-  font-size: 0.6875rem;
-  letter-spacing: 0.22em;
+  font-family: var(--display);
+  font-size: 0.75rem;
+  letter-spacing: 0.2em;
   text-transform: uppercase;
-  font-weight: 500;
+  font-weight: 600;
   color: var(--signal);
   margin: 0;
 }
@@ -125,28 +122,33 @@ a {
 
 .lede {
   font-size: clamp(1.0625rem, 1.5vw, 1.375rem);
+  font-weight: 400;
   line-height: 1.5;
   max-width: 46ch;
-  color: var(--type-mute);
+  color: var(--type);
   margin: 0;
 }
 
 .mono {
-  font-family: var(--mono);
+  font-family: var(--display);
   font-size: 0.75rem;
+  font-weight: 600;
   letter-spacing: 0.14em;
   text-transform: uppercase;
 }
 
 .mono--faint {
-  color: var(--type-faint);
+  font-weight: 400;
+  letter-spacing: 0.16em;
+  color: var(--type);
 }
 
 .prose {
   max-width: var(--measure);
   font-size: clamp(1rem, 1.15vw, 1.125rem);
+  font-weight: 400;
   line-height: 1.62;
-  color: var(--type-mute);
+  color: var(--type);
   margin: 0;
 }
 
@@ -171,8 +173,9 @@ a {
   padding: 0.6rem 1rem;
   background: var(--signal);
   color: var(--ground);
-  font-family: var(--mono);
+  font-family: var(--display);
   font-size: 0.75rem;
+  font-weight: 600;
   letter-spacing: 0.12em;
   text-transform: uppercase;
   text-decoration: none;
@@ -269,7 +272,7 @@ a {
   align-items: baseline;
   gap: 0.55rem;
   text-decoration: none;
-  font-family: var(--mono);
+  font-family: var(--display);
   font-size: 0.8125rem;
   letter-spacing: 0.16em;
   text-transform: uppercase;
@@ -278,12 +281,14 @@ a {
 }
 
 .wordmark b {
-  font-weight: 600;
+  font-weight: 700;
   letter-spacing: 0.16em;
 }
 
 .wordmark span {
-  color: var(--type-faint);
+  font-weight: 400;
+  letter-spacing: 0.2em;
+  color: var(--type);
 }
 
 /* the smallest phones cannot hold the mark, the sub label and the menu pill
@@ -302,18 +307,19 @@ a {
 }
 
 .nav__link {
-  font-family: var(--mono);
+  font-family: var(--display);
   font-size: 0.75rem;
+  font-weight: 400;
   letter-spacing: 0.13em;
   text-transform: uppercase;
-  color: var(--type-mute);
+  color: var(--type);
   text-decoration: none;
   padding: 0.4rem 0;
-  transition: color 0.2s var(--spring);
+  transition: letter-spacing 0.2s var(--spring);
 }
 
 .nav__link:hover {
-  color: var(--type);
+  letter-spacing: 0.18em;
 }
 
 .nav__link[aria-current="page"] {
@@ -339,11 +345,11 @@ a {
   border-radius: 999px;
   background: var(--btn-bg);
   color: var(--btn-fg);
-  font-family: var(--mono);
+  font-family: var(--display);
   font-size: 0.75rem;
   letter-spacing: 0.13em;
   text-transform: uppercase;
-  font-weight: 500;
+  font-weight: 600;
   text-decoration: none;
   cursor: pointer;
   will-change: transform;
@@ -386,8 +392,9 @@ a {
   margin-top: auto;
   padding: 0.5rem 0 0.4rem;
   border-bottom: 1px solid var(--hair-strong);
-  font-family: var(--mono);
+  font-family: var(--display);
   font-size: 0.75rem;
+  font-weight: 600;
   letter-spacing: 0.13em;
   text-transform: uppercase;
   color: var(--signal);
@@ -440,9 +447,11 @@ a {
   display: block;
 }
 
-/* tonal step, not a second colour */
+/* weight step, not a second colour */
 .hero h1 .line--dim {
-  color: rgba(243, 240, 234, 0.46);
+  font-weight: 400;
+  letter-spacing: -0.02em;
+  color: var(--type);
 }
 
 .hero__meta {
@@ -467,11 +476,12 @@ a {
 }
 
 .hero__ticker li {
-  font-family: var(--mono);
-  font-size: 0.6875rem;
+  font-family: var(--display);
+  font-size: 0.75rem;
+  font-weight: 500;
   letter-spacing: 0.14em;
   text-transform: uppercase;
-  color: var(--type-faint);
+  color: var(--type);
   list-style: none;
 }
 
@@ -572,10 +582,11 @@ a {
   margin: 0 0 0.85rem;
   padding: 0.2rem 0.55rem;
   border: 1px solid var(--hair-strong);
-  font-family: var(--mono);
-  font-size: 0.6875rem;
-  letter-spacing: 0.2em;
-  color: var(--type-mute);
+  font-family: var(--display);
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.16em;
+  color: var(--type);
 }
 
 .tile h3 {
@@ -590,19 +601,21 @@ a {
 
 .tile p {
   margin: 0 0 1.5rem;
-  color: var(--type-mute);
+  color: var(--type);
   font-size: 1rem;
+  font-weight: 400;
   line-height: 1.62;
   max-width: 42ch;
 }
 
 .tile__note {
-  font-family: var(--mono);
-  font-size: 0.6875rem;
+  font-family: var(--display);
+  font-size: 0.75rem;
+  font-weight: 500;
   letter-spacing: 0.1em;
   text-transform: uppercase;
-  line-height: 1.8;
-  color: var(--type-faint);
+  line-height: 1.7;
+  color: var(--type);
   margin: -0.6rem 0 1.5rem;
 }
 
@@ -665,10 +678,11 @@ a {
   gap: 0.9rem;
   padding: 0.85rem 0;
   border-top: 1px solid var(--hair);
-  font-family: var(--mono);
-  font-size: 0.8125rem;
-  letter-spacing: 0.06em;
-  color: var(--type-mute);
+  font-family: var(--display);
+  font-size: 0.875rem;
+  font-weight: 400;
+  letter-spacing: 0.04em;
+  color: var(--type);
 }
 
 .loc__routes li b {
@@ -743,11 +757,12 @@ a {
 }
 
 .field label {
-  font-family: var(--mono);
-  font-size: 0.6875rem;
+  font-family: var(--display);
+  font-size: 0.75rem;
+  font-weight: 600;
   letter-spacing: 0.16em;
   text-transform: uppercase;
-  color: var(--type-mute);
+  color: var(--type);
 }
 
 .field input,
@@ -859,9 +874,10 @@ a {
 }
 
 .dl dt {
-  font-family: var(--mono);
-  font-size: 0.6875rem;
-  letter-spacing: 0.18em;
+  font-family: var(--display);
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.16em;
   text-transform: uppercase;
   color: var(--signal);
 }
@@ -878,12 +894,13 @@ a {
 }
 
 .note {
-  font-family: var(--mono);
+  font-family: var(--display);
   font-size: 0.75rem;
+  font-weight: 500;
   letter-spacing: 0.1em;
   text-transform: uppercase;
-  line-height: 1.8;
-  color: var(--type-faint);
+  line-height: 1.7;
+  color: var(--type);
   margin: 1.1rem 0 0;
 }
 
@@ -915,13 +932,13 @@ a {
 }
 
 .footer__col h3 {
-  font-family: var(--mono);
-  font-size: 0.6875rem;
-  letter-spacing: 0.18em;
+  font-family: var(--display);
+  font-size: 0.75rem;
+  letter-spacing: 0.16em;
   text-transform: uppercase;
   color: var(--signal);
   margin: 0 0 0.9rem;
-  font-weight: 500;
+  font-weight: 600;
 }
 
 .footer__col ul {
@@ -934,18 +951,21 @@ a {
 
 .footer__col a,
 .footer__col p {
-  color: var(--type-mute);
+  color: var(--type);
   text-decoration: none;
   font-size: 0.9375rem;
+  font-weight: 400;
   margin: 0;
 }
 
 .footer__col a:hover {
-  color: var(--type);
+  letter-spacing: 0.04em;
 }
 
 .footer__blurb {
-  color: var(--type-mute);
+  color: var(--type);
+  font-weight: 400;
+  line-height: 1.55;
   margin: 0;
   max-width: 34ch;
 }
@@ -958,11 +978,12 @@ a {
   margin-top: clamp(2.5rem, 5vw, 4rem);
   padding-top: 1.25rem;
   border-top: 1px solid var(--hair);
-  font-family: var(--mono);
-  font-size: 0.6875rem;
+  font-family: var(--display);
+  font-size: 0.75rem;
+  font-weight: 400;
   letter-spacing: 0.13em;
   text-transform: uppercase;
-  color: var(--type-faint);
+  color: var(--type);
 }
 
 /* ---------- reveal ---------- */
@@ -992,8 +1013,9 @@ a {
     border-radius: 999px;
     background: transparent;
     color: var(--type);
-    font-family: var(--mono);
-    font-size: 0.6875rem;
+    font-family: var(--display);
+    font-size: 0.75rem;
+    font-weight: 500;
     letter-spacing: 0.14em;
     text-transform: uppercase;
     cursor: pointer;

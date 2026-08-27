@@ -10,10 +10,11 @@ Static HTML, CSS and vanilla JS. No build step, no dependencies, no backend.
 
 ## Type
 
-Space Grotesk carries everything: display, headings and body. JetBrains Mono is
-scoped to the terminal roles only, meaning the graph node labels and indices,
-the stage and route counters, and the small uppercase micro labels such as
-eyebrows, chips and field labels. No serif anywhere.
+Space Grotesk carries everything: display, headings, body, and the UI labels
+(nav, ticker, eyebrows, chips, field labels, indexes). There is no second
+face. On black, type is white `#FFFFFF`. Hierarchy is size, weight, tracking
+and line-height. Grey mute and faint are not used as type color. No serif
+anywhere.
 
 ## Paint
 
@@ -25,9 +26,10 @@ Terminal orange `#ff6a00` is the only accent, and it is an accent rather than
 a surface. It carries the section eyebrows, the filled Get a Quote plates, the
 four tile Get a Quote paths, the active graph node, the lit route hairline, the
 route numbers, the stage counters and the focus rings. Filled plates are always
-black on orange, never white on orange. Everything else is neutral white on
-black. A pixel sample of a rendered viewport reads an average of about
-`rgb(19, 17, 15)` with zero blue dominant pixels and about one percent orange.
+black on orange, never white on orange. Everything else is white `#FFFFFF` on
+black. Hierarchy is type design, not grey. A pixel sample of a rendered
+viewport reads an average of about `rgb(19, 17, 15)` with zero blue dominant
+pixels and about one percent orange.
 
 ## Capabilities tiles
 
