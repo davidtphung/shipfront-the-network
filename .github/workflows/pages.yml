@@ -1,7 +1,8 @@
 name: Publish to gh-pages
 
-# GitHub Pages serves this site from the gh-pages branch. This job keeps that
-# branch in sync with main so a push to main publishes the site.
+# GitHub Pages serves this site from the gh-pages branch. This job makes sure
+# the capability stills are present and byte correct, then keeps gh-pages in
+# sync with main so a push to main publishes the site.
 
 on:
   push:
@@ -22,6 +23,19 @@ jobs:
       - uses: actions/checkout@v4
         with:
           fetch-depth: 0
+
+      - name: Verify or fetch capability stills
+        id: stills
+        run: bash scripts/fetch-stills.sh
+
+      - name: Commit any newly fetched stills
+        if: steps.stills.outputs.changed == '1'
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add assets/images
+          git commit -m "Add verified capability stills"
+          git push origin HEAD:main
 
       - name: Mirror main onto gh-pages
         run: |

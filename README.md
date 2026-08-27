@@ -1,12 +1,42 @@
 # Shipfront · THE NETWORK
 
-A night-network editorial site for Shipfront, a warehousing and fulfillment
+A black-ground editorial site for Shipfront, a warehousing and fulfillment
 operation in downtown Los Angeles. The signature object of the site is
 `#network`: an illustrative six stage fulfillment route (Store, Inventory,
 Fulfillment, Quality check, Carrier, Customer) rendered as a sticky, keyboard
 navigable node graph with a traveling order token.
 
 Static HTML, CSS and vanilla JS. No build step, no dependencies, no backend.
+
+## Paint
+
+The ground is true black `#000000`. Each section lays a subtle wash of that
+same black over it, a radial lift to about `#131313` and back down, plus a
+whisper of warm at the far edge like heat on a dock. There is no colour field.
+
+Warm `#cf8f5c` is an accent, never a surface. It carries the section eyebrows,
+one filled call to action, the active node, and the lit route hairline.
+Everything else, including the progress meter, the stage tags and the routes
+strip, is neutral white on black. A pixel sample of a rendered viewport reads
+an average of about `rgb(19, 18, 17)` with zero blue dominant pixels.
+
+## Capabilities tiles
+
+The four capabilities are image led tiles: clipped still first, then a numeric
+index, the live heading, the verbatim live body, and a single Get a Quote path.
+The stills are the shared Shipfront frames also used on the sibling site and
+are copied here byte for byte, not recoded. They carry the luminance so the
+page can stay black without a paper section.
+
+If `assets/images/` is empty after a fresh clone, run:
+
+```bash
+scripts/fetch-stills.sh
+```
+
+It pins every frame to a sha1 and byte count and refuses to write anything
+that does not match, so the frames can never be silently recoded. The publish
+workflow runs the same script before deploying.
 
 Live: <https://davidtphung.github.io/shipfront-the-network/>
 
@@ -53,6 +83,9 @@ publishing is just a push to `main`.
   `opacity`. Presses use a critically damped curve to `scale(0.97)`.
 - **Mobile.** Below the desktop breakpoint the graph becomes a vertical stepped
   route with all copy visible at once.
+- **No hover only meaning.** Keyboard reads exactly what hover and tap reveal,
+  on the node graph and on the capability tiles. There is no `role="tab"`
+  anywhere; hover on a tile only scales its still.
 
 The graph is illustrative and is labeled as such. It is not a live tracker and
 carries no live customer data.
