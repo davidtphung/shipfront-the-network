@@ -1,0 +1,590 @@
+/* THE NETWORK
+   Sticky desktop journey, native scroll only. Mobile vertical steps.
+   Every animated property is transform or opacity. */
+
+.network {
+  position: relative;
+  background: var(--night);
+  border-block: 1px solid var(--night-line);
+}
+
+.network::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(
+      70% 55% at 50% 42%,
+      rgba(92, 225, 242, 0.09),
+      transparent 72%
+    ),
+    linear-gradient(180deg, rgba(4, 11, 20, 0.7), transparent 22%, rgba(4, 11, 20, 0.7));
+  pointer-events: none;
+}
+
+/* ---------- stage ---------- */
+
+.network__stage {
+  position: relative;
+  display: grid;
+  gap: clamp(1.25rem, 2.5vw, 2rem);
+  align-content: start;
+  padding-block: clamp(3.5rem, 7vw, 5rem);
+}
+
+.network__head {
+  display: grid;
+  gap: 0.75rem;
+}
+
+.network__headrow {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.network__head h2 {
+  color: var(--on-night);
+  max-width: 22ch;
+}
+
+.network__disclaimer {
+  font-family: var(--mono);
+  font-size: 0.6875rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--on-night-faint);
+  margin: 0;
+}
+
+/* signal readout */
+
+.signal {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  font-family: var(--mono);
+  font-size: 0.6875rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--signal);
+  border: 1px solid var(--signal-soft);
+  border-radius: 999px;
+  padding: 0.4rem 0.85rem;
+}
+
+.signal__dot {
+  width: 0.4rem;
+  height: 0.4rem;
+  border-radius: 50%;
+  background: var(--signal);
+  will-change: transform, opacity;
+}
+
+.network[data-playing="true"] .signal__dot {
+  animation: signal-pulse 2.6s var(--spring) infinite;
+}
+
+@keyframes signal-pulse {
+  0%,
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(0.55);
+    opacity: 0.45;
+  }
+}
+
+/* ---------- graph ---------- */
+
+.graph {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  min-height: 0;
+}
+
+.graph__svg {
+  width: 100%;
+  height: 100%;
+}
+
+.graph__route,
+.graph__seg {
+  fill: none;
+  stroke-linecap: round;
+}
+
+.graph__route {
+  stroke: rgba(133, 176, 209, 0.26);
+  stroke-width: 1.5;
+}
+
+.graph__seg {
+  stroke: var(--signal);
+  stroke-width: 1.5;
+  opacity: 0;
+  transition: opacity 0.55s var(--spring);
+}
+
+.graph__seg[data-lit="true"] {
+  opacity: 0.8;
+}
+
+.graph__grid line {
+  stroke: rgba(133, 176, 209, 0.07);
+  stroke-width: 1;
+}
+
+/* nodes */
+
+.gnode {
+  cursor: pointer;
+}
+
+.gnode__hit {
+  fill: transparent;
+}
+
+.gnode__halo {
+  fill: var(--signal);
+  opacity: 0;
+  transform-box: fill-box;
+  transform-origin: center;
+  transform: scale(0.4);
+  will-change: transform, opacity;
+  transition: opacity 0.4s linear, transform 0.6s var(--spring);
+}
+
+.gnode__ring {
+  fill: none;
+  stroke: rgba(133, 176, 209, 0.35);
+  stroke-width: 1.25;
+  transform-box: fill-box;
+  transform-origin: center;
+  will-change: transform;
+  transition: transform 0.5s var(--spring), stroke 0.3s linear;
+}
+
+.gnode__core {
+  fill: var(--night);
+  stroke: var(--signal);
+  stroke-width: 1.5;
+  transform-box: fill-box;
+  transform-origin: center;
+  will-change: transform;
+  transition: transform 0.5s var(--spring);
+}
+
+.gnode__label {
+  font-family: var(--mono);
+  font-size: 12px;
+  letter-spacing: 1.6px;
+  text-transform: uppercase;
+  fill: var(--on-night-mute);
+  transition: fill 0.3s linear, opacity 0.3s linear;
+}
+
+.gnode__index {
+  font-family: var(--mono);
+  font-size: 10px;
+  letter-spacing: 1.4px;
+  fill: var(--on-night-faint);
+  transition: fill 0.3s linear;
+}
+
+.gnode:hover .gnode__ring,
+.gnode:focus-visible .gnode__ring {
+  transform: scale(1.18);
+  stroke: var(--signal-soft);
+}
+
+.gnode:hover .gnode__label,
+.gnode:focus-visible .gnode__label {
+  fill: var(--on-night);
+}
+
+.gnode:active .gnode__core {
+  transform: scale(0.97);
+  transition-duration: 0.11s;
+  transition-timing-function: var(--press);
+}
+
+.gnode[data-active="true"] .gnode__halo {
+  opacity: 0.16;
+  transform: scale(1);
+}
+
+.gnode[data-active="true"] .gnode__ring {
+  transform: scale(1.32);
+  stroke: var(--signal-soft);
+}
+
+.gnode[data-active="true"] .gnode__core {
+  transform: scale(1.22);
+}
+
+.gnode[data-active="true"] .gnode__label {
+  fill: var(--signal);
+}
+
+.gnode[data-active="true"] .gnode__index {
+  fill: var(--signal);
+}
+
+.gnode:focus-visible {
+  outline: none;
+}
+
+.gnode:focus-visible .gnode__hit {
+  stroke: var(--signal);
+  stroke-width: 1.5;
+  stroke-dasharray: 3 3;
+}
+
+/* traveling order token */
+
+.token {
+  will-change: transform, opacity;
+  opacity: 0;
+}
+
+.token__body {
+  fill: var(--signal);
+}
+
+.token__glow {
+  fill: var(--signal);
+  opacity: 0.2;
+}
+
+/* ---------- detail readout ---------- */
+
+.network__readout {
+  position: relative;
+  display: grid;
+  gap: 0.9rem;
+  min-height: clamp(11rem, 17vh, 13rem);
+  padding-top: clamp(1rem, 2vw, 1.5rem);
+  border-top: 1px solid var(--night-line);
+}
+
+.panel {
+  grid-area: 1 / 1;
+  display: grid;
+  gap: 0.7rem;
+  max-width: 62ch;
+  opacity: 0;
+  transform: translateY(10px);
+  pointer-events: none;
+  transition: opacity 0.3s linear, transform 0.55s var(--spring);
+}
+
+.panel[data-active="true"] {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+
+.panel__top {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 0.75rem;
+}
+
+.panel__step {
+  font-family: var(--mono);
+  font-size: 0.6875rem;
+  letter-spacing: 0.2em;
+  color: var(--signal);
+}
+
+.panel__name {
+  font-family: var(--display);
+  font-size: clamp(1.5rem, 3vw, 2.25rem);
+  font-weight: 600;
+  letter-spacing: -0.03em;
+  line-height: 1;
+  margin: 0;
+  color: var(--on-night);
+}
+
+.panel__tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+.panel__tags li {
+  font-family: var(--mono);
+  font-size: 0.625rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--signal);
+  border: 1px solid var(--signal-soft);
+  border-radius: 999px;
+  padding: 0.25rem 0.55rem;
+}
+
+.panel__copy {
+  margin: 0;
+  font-size: clamp(1rem, 1.35vw, 1.1875rem);
+  line-height: 1.55;
+  color: var(--on-night-mute);
+}
+
+/* ---------- progress rail ---------- */
+
+.rail {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.rail__track {
+  position: relative;
+  flex: 1;
+  height: 1px;
+  background: var(--night-line-strong);
+  overflow: hidden;
+}
+
+.rail__fill {
+  position: absolute;
+  inset: 0;
+  background: var(--signal);
+  transform-origin: left center;
+  transform: scaleX(0);
+  will-change: transform;
+  transition: transform 0.35s var(--spring);
+}
+
+.rail__count {
+  font-family: var(--mono);
+  font-size: 0.6875rem;
+  letter-spacing: 0.18em;
+  color: var(--on-night-faint);
+  white-space: nowrap;
+}
+
+.rail__count b {
+  color: var(--signal);
+  font-weight: 500;
+}
+
+/* ---------- desktop sticky journey ---------- */
+
+.network__steps {
+  display: none;
+}
+
+@media (min-width: 62rem) and (min-height: 40rem) {
+  .network {
+    height: 340vh;
+  }
+
+  .network__stage {
+    position: sticky;
+    top: 0;
+    height: 100vh;
+    grid-template-rows: auto minmax(0, 1fr) auto auto;
+    align-content: stretch;
+    padding-block: calc(var(--nav-h) + 1.5rem) 2.5rem;
+  }
+
+  .graph {
+    min-height: 0;
+  }
+}
+
+/* ---------- mobile / short viewport: vertical steps ---------- */
+
+@media (max-width: 61.99rem), (max-height: 39.99rem) {
+  .graph,
+  .network__readout,
+  .rail {
+    display: none;
+  }
+
+  .network__steps {
+    display: block;
+    position: relative;
+    padding: clamp(1.5rem, 5vw, 2rem) 0 0;
+    margin: 0;
+  }
+
+  .steps {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    counter-reset: none;
+  }
+
+  .network__steps::before {
+    content: "";
+    position: absolute;
+    left: 0.4375rem;
+    top: clamp(2.4rem, 6vw, 2.9rem);
+    bottom: 3.5rem;
+    width: 1px;
+    background: linear-gradient(
+      180deg,
+      var(--signal-soft),
+      var(--night-line-strong)
+    );
+  }
+
+  .mtoken {
+    position: absolute;
+    left: 0.0625rem;
+    top: clamp(2.4rem, 6vw, 2.9rem);
+    width: 0.8125rem;
+    height: 0.8125rem;
+    border-radius: 2px;
+    background: var(--signal);
+    opacity: 0;
+    will-change: transform, opacity;
+    pointer-events: none;
+  }
+
+  .step {
+    position: relative;
+    padding: 0 0 clamp(1.75rem, 5vw, 2.25rem) clamp(1.75rem, 6vw, 2.25rem);
+  }
+
+  .step::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0.35rem;
+    width: 0.875rem;
+    height: 0.875rem;
+    border-radius: 50%;
+    border: 1.5px solid var(--signal);
+    background: var(--night);
+  }
+
+  .step__top {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    gap: 0.6rem;
+  }
+
+  .step__step {
+    font-family: var(--mono);
+    font-size: 0.6875rem;
+    letter-spacing: 0.2em;
+    color: var(--signal);
+  }
+
+  .step__name {
+    font-family: var(--display);
+    font-size: clamp(1.375rem, 6vw, 1.75rem);
+    font-weight: 600;
+    letter-spacing: -0.03em;
+    line-height: 1;
+    margin: 0;
+    color: var(--on-night);
+  }
+
+  .step__tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.3rem;
+    padding: 0;
+    margin: 0.55rem 0 0;
+    list-style: none;
+  }
+
+  .step__tags li {
+    font-family: var(--mono);
+    font-size: 0.625rem;
+    letter-spacing: 0.13em;
+    text-transform: uppercase;
+    color: var(--signal);
+    border: 1px solid var(--signal-soft);
+    border-radius: 999px;
+    padding: 0.22rem 0.5rem;
+  }
+
+  .step__copy {
+    margin: 0.7rem 0 0;
+    color: var(--on-night-mute);
+    font-size: 1rem;
+    line-height: 1.58;
+  }
+}
+
+/* ---------- reduced motion: fully drawn static graph ---------- */
+
+@media (prefers-reduced-motion: reduce) {
+  .network {
+    height: auto;
+  }
+
+  .network__stage {
+    position: static;
+    height: auto;
+  }
+
+  .token,
+  .mtoken {
+    display: none;
+  }
+
+  .graph {
+    height: auto;
+    aspect-ratio: 1200 / 560;
+  }
+
+  .graph__svg {
+    height: auto;
+  }
+
+  .network[data-playing="true"] .signal__dot {
+    animation: none;
+  }
+
+  .graph__seg {
+    opacity: 0.8;
+    transition: none;
+  }
+
+  .gnode__halo,
+  .gnode__ring,
+  .gnode__core,
+  .panel,
+  .rail__fill {
+    transition: none;
+  }
+
+  .gnode__halo {
+    opacity: 0.1;
+    transform: scale(1);
+  }
+
+  .gnode__label {
+    fill: var(--on-night);
+  }
+
+  .network__readout {
+    min-height: 0;
+  }
+
+  .panel {
+    grid-area: auto;
+    opacity: 1;
+    transform: none;
+    pointer-events: auto;
+    padding-block: 0.9rem;
+    border-top: 1px solid var(--night-line);
+  }
+}
