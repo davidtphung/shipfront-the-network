@@ -14,19 +14,16 @@
   --hair: rgba(255, 255, 255, 0.1);
   --hair-strong: rgba(255, 255, 255, 0.22);
 
-  --type: #ffffff;
-  --type-mute: #ffffff;
-  --type-faint: #ffffff;
+  /* White on black. Hierarchy is size, weight, tracking, line-height. */
+  --type: #FFFFFF;
 
-  /* Terminal signal. accent only: hairlines, one fill, node signal */
+  /* Terminal signal. accent only: one fill, eyebrows, node signal */
   --signal: #ff6a00;
   --signal-soft: rgba(255, 106, 0, 0.34);
   --signal-faint: rgba(255, 106, 0, 0.08);
 
   --display: "Space Grotesk", -apple-system, BlinkMacSystemFont, "Segoe UI",
     "Helvetica Neue", Arial, sans-serif;
-  --mono: "JetBrains Mono", ui-monospace, "SFMono-Regular", "SF Mono",
-    "Roboto Mono", Menlo, Consolas, monospace;
 
   --gutter: clamp(1.25rem, 5vw, 5rem);
   --measure: 68ch;
@@ -132,8 +129,9 @@ a {
 }
 
 .mono {
-  font-family: var(--mono);
+  font-family: var(--display);
   font-size: 0.75rem;
+  font-weight: 600;
   letter-spacing: 0.14em;
   text-transform: uppercase;
 }
@@ -583,9 +581,10 @@ a {
   margin: 0 0 0.45rem;
   padding: 0.2rem 0.55rem;
   border: 1px solid #ffffff;
-  font-family: var(--mono);
-  font-size: 0.6875rem;
-  letter-spacing: 0.2em;
+  font-family: var(--display);
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.16em;
   color: #ffffff;
 }
 

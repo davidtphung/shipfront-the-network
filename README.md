@@ -10,9 +10,10 @@ Static HTML, CSS and vanilla JS. No build step, no dependencies, no backend.
 
 ## Type
 
-Space Grotesk carries display, headings, body, and UI (nav, ticker, buttons,
-eyebrows, labels). JetBrains Mono is only for true numerals and codes, such as
-the capability tile indexes 01-04. No Inter, no serif, no second display face.
+Space Grotesk carries everything: display, headings, body, UI labels, and
+indexes. There is no second face. On black, type is white `#FFFFFF`.
+Hierarchy is size, weight, tracking and line-height. Grey mute and faint
+are not used as type color. No Inter, no serif.
 
 ## Paint
 
