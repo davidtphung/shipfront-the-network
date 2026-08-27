@@ -608,7 +608,7 @@ a {
   max-width: 42ch;
 }
 
-.tile__note {
+.tile p.tile__note {
   font-family: var(--display);
   font-size: 0.75rem;
   font-weight: 500;
