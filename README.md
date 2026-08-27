@@ -10,32 +10,23 @@ Static HTML, CSS and vanilla JS. No build step, no dependencies, no backend.
 
 ## Type
 
-Space Grotesk carries everything: display, headings and body. JetBrains Mono is
-scoped to the terminal roles only, meaning the graph node labels and indices,
-the stage and route counters, and the small uppercase micro labels such as
-eyebrows, chips and field labels. No serif anywhere.
+Space Grotesk carries display, headings, body, and UI (nav, ticker, buttons,
+eyebrows, labels). JetBrains Mono is only for true numerals and codes, such as
+the capability tile indexes 01-04. No Inter, no serif, no second display face.
 
 ## Paint
 
-The ground is true black `#000000`. Each section lays a subtle wash of that
-same black over it, a radial lift to about `#131313` and back down, plus a
-whisper of warm at the far edge like heat on a dock. There is no colour field.
-
-Terminal orange `#ff6a00` is the only accent, and it is an accent rather than
-a surface. It carries the section eyebrows, the filled Get a Quote plates, the
-four tile Get a Quote paths, the active graph node, the lit route hairline, the
-route numbers, the stage counters and the focus rings. Filled plates are always
-black on orange, never white on orange. Everything else is neutral white on
-black. A pixel sample of a rendered viewport reads an average of about
-`rgb(19, 17, 15)` with zero blue dominant pixels and about one percent orange.
+The ground is true black `#000000`. Body and UI type is white `#FFFFFF`.
+Hierarchy is size, weight, tracking, and space only. Grey is not used to mute
+type. Terminal orange `#ff6a00` is the only accent: CTAs (black on orange),
+rules, and rare emphasis. No ember.
 
 ## Capabilities tiles
 
-The four capabilities are image led tiles: clipped still first, then a numeric
-index, the live heading, the verbatim live body, and a single Get a Quote path.
-The stills are the shared Shipfront frames also used on the sibling site and
-are copied here byte for byte, not recoded. They carry the luminance so the
-page can stay black without a paper section.
+The four capabilities are image-only cards at rest. Title and short proof live
+on a black caption plate over the still. The plate dissolves in on hover,
+`:focus-within`, press, and tap (`is-press`). There is no body paragraph under
+the still. The stills are the shared Shipfront frames, copied byte for byte.
 
 If `assets/images/` is empty after a fresh clone, run:
 
