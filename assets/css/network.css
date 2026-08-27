@@ -188,8 +188,10 @@
 
 .gnode__label {
   font-family: var(--mono);
-  font-size: 12px;
-  letter-spacing: 1.6px;
+  /* sized in viewBox units so labels stay legible when the stage is short
+     and the whole graph scales down */
+  font-size: 14px;
+  letter-spacing: 1.8px;
   text-transform: uppercase;
   fill: var(--on-night-mute);
   transition: fill 0.3s linear, opacity 0.3s linear;
@@ -197,8 +199,8 @@
 
 .gnode__index {
   font-family: var(--mono);
-  font-size: 10px;
-  letter-spacing: 1.4px;
+  font-size: 11.5px;
+  letter-spacing: 1.5px;
   fill: var(--on-night-faint);
   transition: fill 0.3s linear;
 }
@@ -392,7 +394,7 @@
   display: none;
 }
 
-@media (min-width: 62rem) and (min-height: 40rem) {
+@media (min-width: 62rem) and (min-height: 42rem) {
   .network {
     height: 340vh;
   }
@@ -412,9 +414,37 @@
   }
 }
 
+/* Short desktop windows: hand the graph back as much height as possible so it
+   does not scale down to unreadable labels. */
+@media (min-width: 62rem) and (min-height: 42rem) and (max-height: 56rem) {
+  .network__stage {
+    gap: 1rem;
+    padding-block: calc(var(--nav-h) + 0.75rem) 1.5rem;
+  }
+
+  .network__head h2 {
+    font-size: clamp(1.75rem, 3vw, 2.5rem);
+    line-height: 1;
+  }
+
+  .network__readout {
+    min-height: 7.5rem;
+  }
+
+  .panel__name {
+    font-size: 1.5rem;
+  }
+
+  .panel__copy {
+    font-size: 1rem;
+  }
+}
+
 /* ---------- mobile / short viewport: vertical steps ---------- */
 
-@media (max-width: 61.99rem), (max-height: 39.99rem) {
+/* Complement of the sticky query above. Keep the two in sync so there is no
+   viewport band that gets neither the sticky journey nor the vertical steps. */
+@media (max-width: 61.99rem), (max-height: 41.99rem) {
   .graph,
   .network__readout,
   .rail {
