@@ -10,6 +10,7 @@
     />
     <meta name="color-scheme" content="dark light" />
     <meta name="theme-color" content="#07111e" />
+    <link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -40,7 +41,7 @@
         }
         .graph {
           height: auto;
-          aspect-ratio: 1200 / 560;
+          aspect-ratio: 1200 / 400;
         }
         .graph__svg {
           height: auto;
@@ -127,23 +128,25 @@
         <div class="shell network__stage">
           <div class="network__head">
             <div class="network__headrow">
-              <p class="eyebrow">Shipfront Network</p>
+              <div class="network__meta">
+                <p class="eyebrow">Shipfront Network</p>
+                <p class="network__disclaimer">
+                  Illustrative workflow. Not live tracking data.
+                </p>
+              </div>
               <span class="signal">
                 <span class="signal__dot" aria-hidden="true"></span>
                 Order signal
               </span>
             </div>
             <h2 class="display display--l">How Shipfront moves with you</h2>
-            <p class="network__disclaimer">
-              Illustrative workflow. Not live tracking data.
-            </p>
           </div>
 
           <!-- desktop graph -->
           <div class="graph">
             <svg
               class="graph__svg"
-              viewBox="0 0 1200 560"
+              viewBox="0 0 1200 400"
               preserveAspectRatio="xMidYMid meet"
               role="group"
               aria-labelledby="network-title network-note"
@@ -158,28 +161,28 @@
               </desc>
 
               <g class="graph__grid" aria-hidden="true">
-                <line x1="0" y1="140" x2="1200" y2="140" />
-                <line x1="0" y1="290" x2="1200" y2="290" />
-                <line x1="0" y1="440" x2="1200" y2="440" />
+                <line x1="0" y1="100" x2="1200" y2="100" />
+                <line x1="0" y1="215" x2="1200" y2="215" />
+                <line x1="0" y1="330" x2="1200" y2="330" />
               </g>
 
               <!-- full route, used for structure and for token travel -->
               <path
                 class="graph__route"
                 data-route
-                d="M110,430 C190,430 226,322 306,322 C386,322 422,386 502,386 C582,386 618,250 698,250 C778,250 814,306 894,306 C974,306 1010,168 1090,168"
+                d="M110,330 C190,330 226,246 306,246 C386,246 422,292 502,292 C582,292 618,178 698,178 C778,178 814,222 894,222 C974,222 1010,96 1090,96"
                 aria-hidden="true"
               />
 
               <!-- lit segments -->
-              <path class="graph__seg" data-seg data-lit="false" d="M110,430 C190,430 226,322 306,322" aria-hidden="true" />
-              <path class="graph__seg" data-seg data-lit="false" d="M306,322 C386,322 422,386 502,386" aria-hidden="true" />
-              <path class="graph__seg" data-seg data-lit="false" d="M502,386 C582,386 618,250 698,250" aria-hidden="true" />
-              <path class="graph__seg" data-seg data-lit="false" d="M698,250 C778,250 814,306 894,306" aria-hidden="true" />
-              <path class="graph__seg" data-seg data-lit="false" d="M894,306 C974,306 1010,168 1090,168" aria-hidden="true" />
+              <path class="graph__seg" data-seg data-lit="false" d="M110,330 C190,330 226,246 306,246" aria-hidden="true" />
+              <path class="graph__seg" data-seg data-lit="false" d="M306,246 C386,246 422,292 502,292" aria-hidden="true" />
+              <path class="graph__seg" data-seg data-lit="false" d="M502,292 C582,292 618,178 698,178" aria-hidden="true" />
+              <path class="graph__seg" data-seg data-lit="false" d="M698,178 C778,178 814,222 894,222" aria-hidden="true" />
+              <path class="graph__seg" data-seg data-lit="false" d="M894,222 C974,222 1010,96 1090,96" aria-hidden="true" />
 
               <!-- order token -->
-              <g class="token" data-token transform="translate(110 430)" aria-hidden="true">
+              <g class="token" data-token transform="translate(110 330)" aria-hidden="true">
                 <rect class="token__glow" x="-15" y="-15" width="30" height="30" rx="8" />
                 <rect class="token__body" x="-6" y="-6" width="12" height="12" rx="2.5" />
               </g>
@@ -193,7 +196,7 @@
                 tabindex="0"
                 aria-pressed="false"
                 aria-describedby="copy-1"
-                transform="translate(110 430)"
+                transform="translate(110 330)"
               >
                 <title>Store</title>
                 <circle class="gnode__halo" r="34" />
@@ -212,7 +215,7 @@
                 tabindex="0"
                 aria-pressed="false"
                 aria-describedby="copy-2"
-                transform="translate(306 322)"
+                transform="translate(306 246)"
               >
                 <title>Inventory</title>
                 <circle class="gnode__halo" r="34" />
@@ -231,7 +234,7 @@
                 tabindex="0"
                 aria-pressed="false"
                 aria-describedby="copy-3"
-                transform="translate(502 386)"
+                transform="translate(502 292)"
               >
                 <title>Fulfillment</title>
                 <circle class="gnode__halo" r="34" />
@@ -250,7 +253,7 @@
                 tabindex="0"
                 aria-pressed="false"
                 aria-describedby="copy-4"
-                transform="translate(698 250)"
+                transform="translate(698 178)"
               >
                 <title>Quality check</title>
                 <circle class="gnode__halo" r="34" />
@@ -269,7 +272,7 @@
                 tabindex="0"
                 aria-pressed="false"
                 aria-describedby="copy-5"
-                transform="translate(894 306)"
+                transform="translate(894 222)"
               >
                 <title>Carrier</title>
                 <circle class="gnode__halo" r="34" />
@@ -288,7 +291,7 @@
                 tabindex="0"
                 aria-pressed="false"
                 aria-describedby="copy-6"
-                transform="translate(1090 168)"
+                transform="translate(1090 96)"
               >
                 <title>Customer</title>
                 <circle class="gnode__halo" r="34" />
