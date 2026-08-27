@@ -1,14 +1,15 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
-  <rect width="32" height="32" rx="6" fill="#000000" />
-  <path
-    d="M6 23 C11 23 12 12 20 12 C25 12 25 9 26 9"
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
+  <rect width="20" height="20" fill="#000000" />
+  <g
     fill="none"
     stroke="#FF6A00"
-    stroke-width="2"
-    stroke-linecap="round"
-    opacity="0.5"
-  />
-  <circle cx="6" cy="23" r="2.6" fill="#F3F0EA" />
-  <circle cx="20" cy="12" r="2.6" fill="#F3F0EA" />
-  <circle cx="26" cy="9" r="2.6" fill="#FF6A00" />
+    stroke-width="1.25"
+    stroke-linecap="square"
+    stroke-linejoin="miter"
+    stroke-miterlimit="4"
+  >
+    <path d="M6.357 2.150 L16.310 3.690 L13.643 9.436 L3.690 7.897 Z" />
+    <path d="M16.310 3.690 L16.310 12.103 L13.643 17.850 L13.643 9.436" />
+    <path d="M3.690 7.897 L3.690 16.310 L13.643 17.850" />
+  </g>
 </svg>

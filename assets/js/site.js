@@ -77,6 +77,33 @@
   }
 })();
 
+/* ---------------- capability tile select ---------------- */
+
+(function () {
+  "use strict";
+
+  var tiles = Array.prototype.slice.call(document.querySelectorAll(".tile"));
+  if (!tiles.length) return;
+
+  function clearPress(keep) {
+    tiles.forEach(function (tile) {
+      if (tile !== keep) tile.classList.remove("is-press");
+    });
+  }
+
+  tiles.forEach(function (tile) {
+    tile.addEventListener("pointerdown", function (event) {
+      if (event.pointerType === "mouse") return;
+      clearPress(tile);
+      tile.classList.add("is-press");
+    });
+  });
+
+  document.addEventListener("pointerdown", function (event) {
+    if (!event.target.closest(".tile")) clearPress(null);
+  });
+})();
+
 /* ---------------- quote form preview ---------------- */
 
 (function () {

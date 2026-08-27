@@ -62,11 +62,12 @@
 }
 
 .network__disclaimer {
-  font-family: var(--mono);
-  font-size: 0.6875rem;
-  letter-spacing: 0.16em;
+  font-family: var(--display);
+  font-size: 0.75rem;
+  letter-spacing: 0.12em;
   text-transform: uppercase;
-  color: var(--type-faint);
+  font-weight: 500;
+  color: var(--type);
   margin: 0;
 }
 
@@ -76,10 +77,11 @@
   display: inline-flex;
   align-items: center;
   gap: 0.6rem;
-  font-family: var(--mono);
-  font-size: 0.6875rem;
-  letter-spacing: 0.18em;
+  font-family: var(--display);
+  font-size: 0.75rem;
+  letter-spacing: 0.14em;
   text-transform: uppercase;
+  font-weight: 600;
   color: var(--signal);
   border: 1px solid var(--signal-soft);
   border-radius: 999px;
@@ -193,13 +195,14 @@
 }
 
 .gnode__label {
-  font-family: var(--mono);
+  font-family: var(--display);
   /* sized in viewBox units so labels stay legible when the stage is short
      and the whole graph scales down */
   font-size: 14px;
-  letter-spacing: 1.8px;
+  letter-spacing: 1.4px;
+  font-weight: 600;
   text-transform: uppercase;
-  fill: var(--type-mute);
+  fill: var(--type);
   transition: fill 0.3s linear, opacity 0.3s linear;
 }
 
@@ -207,7 +210,7 @@
   font-family: var(--mono);
   font-size: 11.5px;
   letter-spacing: 1.5px;
-  fill: var(--type-faint);
+  fill: var(--type);
   transition: fill 0.3s linear;
 }
 
@@ -339,11 +342,12 @@
 }
 
 .panel__tags li {
-  font-family: var(--mono);
-  font-size: 0.625rem;
-  letter-spacing: 0.14em;
+  font-family: var(--display);
+  font-size: 0.6875rem;
+  letter-spacing: 0.1em;
   text-transform: uppercase;
-  color: var(--type-mute);
+  font-weight: 500;
+  color: var(--type);
   border: 1px solid var(--hair);
   border-radius: 999px;
   padding: 0.25rem 0.55rem;
@@ -353,7 +357,7 @@
   margin: 0;
   font-size: clamp(1rem, 1.35vw, 1.1875rem);
   line-height: 1.55;
-  color: var(--type-mute);
+  color: var(--type);
 }
 
 /* ---------- progress rail ---------- */
@@ -383,10 +387,11 @@
 }
 
 .rail__count {
-  font-family: var(--mono);
-  font-size: 0.6875rem;
-  letter-spacing: 0.18em;
-  color: var(--type-faint);
+  font-family: var(--display);
+  font-size: 0.75rem;
+  letter-spacing: 0.14em;
+  font-weight: 500;
+  color: var(--type);
   white-space: nowrap;
 }
 
@@ -546,11 +551,12 @@
   }
 
   .step__tags li {
-    font-family: var(--mono);
-    font-size: 0.625rem;
-    letter-spacing: 0.13em;
+    font-family: var(--display);
+    font-size: 0.6875rem;
+    letter-spacing: 0.1em;
     text-transform: uppercase;
-    color: var(--type-mute);
+    font-weight: 500;
+    color: var(--type);
     border: 1px solid var(--hair);
     border-radius: 999px;
     padding: 0.22rem 0.5rem;
@@ -558,7 +564,7 @@
 
   .step__copy {
     margin: 0.7rem 0 0;
-    color: var(--type-mute);
+    color: var(--type);
     font-size: 1rem;
     line-height: 1.58;
   }
