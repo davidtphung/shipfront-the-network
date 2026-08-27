@@ -31,7 +31,7 @@ page can stay black without a paper section.
 If `assets/images/` is empty after a fresh clone, run:
 
 ```bash
-scripts/fetch-stills.sh
+bash scripts/fetch-stills.sh
 ```
 
 It pins every frame to a sha1 and byte count and refuses to write anything
