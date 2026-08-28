@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Shipfront &middot; THE NETWORK &middot; Warehousing &amp; Fulfillment Solutions</title>
+    <title>Shipfront &middot; Warehousing &amp; Fulfillment Solutions</title>
     <meta
       name="description"
       content="Shipfront helps eCommerce merchants scale by taking care of their logistics needs, so that they can focus on growing their business. Warehousing and fulfillment in downtown Los Angeles."
@@ -64,9 +64,20 @@
 
     <header class="nav">
       <div class="shell nav__inner">
-        <a class="wordmark" href="index.html">
+        <a class="wordmark" href="index.html" aria-label="Shipfront">
+          <svg class="mark" viewBox="0 0 24 26" width="18" height="20" aria-hidden="true">
+            <polygon points="7,9 12,6 17,9 12,12" fill="#000000" />
+            <polygon points="7,9 12,12 12,19 7,16" fill="#000000" />
+            <polygon points="17,9 12,12 12,19 17,16" fill="#000000" />
+            <g fill="none" stroke="#FF6A00" stroke-width="1.25" stroke-linecap="square" stroke-linejoin="miter">
+              <path d="M7 9 L12 6 L17 9 L12 12 Z" />
+              <path d="M7 9 L7 16 L12 19 L17 16 L17 9" />
+              <path d="M12 12 L12 19" />
+              <path d="M12 6 L12 13 L7 16" />
+              <path d="M12 13 L17 16" />
+            </g>
+          </svg>
           <b>SHIPFRONT</b>
-          <span>THE NETWORK</span>
         </a>
 
         <button
@@ -517,7 +528,7 @@
           </div>
 
           <ul class="tiles" data-reveal-group>
-            <li class="tile" data-reveal>
+            <li class="tile" tabindex="0" data-reveal>
               <figure class="tile__still">
                 <img
                   src="assets/images/fulfillment.jpg"
@@ -526,25 +537,24 @@
                   alt="Pallet racking aisle stacked to the ceiling with wrapped inventory"
                   decoding="async"
                 />
+                <figcaption class="tile__plate">
+                  <span class="tile__index">01</span>
+                  <h3>WAREHOUSING</h3>
+                  <p>
+                    Our warehouses provide the necessary space, security,
+                    temperature-control, and FDA compliant capabilities to store
+                    your products before shipping them to customers. Our
+                    inventory management system tracks all items across every SKU
+                    to know where they are located, how long they have been
+                    there, and the quantity on hand. We actively forecast
+                    inventory demand to keep your supply chain running optimally.
+                  </p>
+                  <a class="btn" href="get-a-quote.html">Get a Quote</a>
+                </figcaption>
               </figure>
-              <span class="tile__index">01</span>
-              <h3>WAREHOUSING</h3>
-              <p>
-                Our warehouses provide the necessary space, security,
-                temperature-control, and FDA compliant capabilities to store your
-                products before shipping them to customers. Our inventory
-                management system tracks all items across every SKU to know where
-                they are located, how long they have been there, and the quantity
-                on hand. We actively forecast inventory demand to keep your supply
-                chain running optimally.
-              </p>
-              <a class="cta-link" href="get-a-quote.html">
-                Get a Quote
-                <svg class="arrow" viewBox="0 0 9 9" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.25"><path d="M1 8 L8 1" /><path d="M2.5 1 H8 V6.5" /></svg>
-              </a>
             </li>
 
-            <li class="tile" data-reveal>
+            <li class="tile" tabindex="0" data-reveal>
               <figure class="tile__still">
                 <img
                   src="assets/images/procurement.jpg"
@@ -554,27 +564,26 @@
                   loading="lazy"
                   decoding="async"
                 />
+                <figcaption class="tile__plate">
+                  <span class="tile__index">02</span>
+                  <h3>FULFILLMENT</h3>
+                  <p>
+                    We build custom workflows to pick, pack, label, and ship your
+                    products exactly how you would like. That means working with
+                    any carrier across traditional partners, as well as the most
+                    innovative companies in last-mile and same-day delivery. We
+                    get your products to your customers, quickly and accurately.
+                  </p>
+                  <p class="tile__note">
+                    Inbound | Kitting | Storage | FBA Prep | Outbound | Last-Mile
+                    Delivery | Same-Day Delivery
+                  </p>
+                  <a class="btn" href="get-a-quote.html">Get a Quote</a>
+                </figcaption>
               </figure>
-              <span class="tile__index">02</span>
-              <h3>FULFILLMENT</h3>
-              <p>
-                We build custom workflows to pick, pack, label, and ship your
-                products exactly how you would like. That means working with any
-                carrier across traditional partners, as well as the most
-                innovative companies in last-mile and same-day delivery. We get
-                your products to your customers, quickly and accurately.
-              </p>
-              <p class="tile__note">
-                Inbound | Kitting | Storage | FBA Prep | Outbound | Last-Mile
-                Delivery | Same-Day Delivery
-              </p>
-              <a class="cta-link" href="get-a-quote.html">
-                Get a Quote
-                <svg class="arrow" viewBox="0 0 9 9" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.25"><path d="M1 8 L8 1" /><path d="M2.5 1 H8 V6.5" /></svg>
-              </a>
             </li>
 
-            <li class="tile" data-reveal>
+            <li class="tile" tabindex="0" data-reveal>
               <figure class="tile__still">
                 <img
                   src="assets/images/integration.jpg"
@@ -584,24 +593,23 @@
                   loading="lazy"
                   decoding="async"
                 />
+                <figcaption class="tile__plate">
+                  <span class="tile__index">03</span>
+                  <h3>ECOMMERCE INTEGRATIONS</h3>
+                  <p>
+                    Shipfront is built on the Flowspace Warehouse Management
+                    System (WMS) - an innovative software solution for managing
+                    the needs of today&rsquo;s warehousing &amp; fulfillment
+                    operations. Through the WMS, Shipfront integrates with
+                    partners across the supply chain ecosystem - from eCommerce
+                    platforms to same-day delivery services.
+                  </p>
+                  <a class="btn" href="get-a-quote.html">Get a Quote</a>
+                </figcaption>
               </figure>
-              <span class="tile__index">03</span>
-              <h3>ECOMMERCE INTEGRATIONS</h3>
-              <p>
-                Shipfront is built on the Flowspace Warehouse Management System
-                (WMS) - an innovative software solution for managing the needs of
-                today&rsquo;s warehousing &amp; fulfillment operations. Through
-                the WMS, Shipfront integrates with partners across the supply
-                chain ecosystem - from eCommerce platforms to same-day delivery
-                services.
-              </p>
-              <a class="cta-link" href="get-a-quote.html">
-                Get a Quote
-                <svg class="arrow" viewBox="0 0 9 9" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.25"><path d="M1 8 L8 1" /><path d="M2.5 1 H8 V6.5" /></svg>
-              </a>
             </li>
 
-            <li class="tile tile--wide" data-reveal>
+            <li class="tile tile--wide" tabindex="0" data-reveal>
               <figure class="tile__still">
                 <img
                   src="assets/images/logistics-usa.jpg"
@@ -611,26 +619,24 @@
                   loading="lazy"
                   decoding="async"
                 />
+                <figcaption class="tile__plate">
+                  <span class="tile__index">04</span>
+                  <h3>LOCATION IS EVERYTHING</h3>
+                  <p>
+                    Situated in downtown L.A., next to the 10, 110, and 101
+                    freeways - Shipfront is perfectly positioned to serve your
+                    eCommerce business. Not only do we inbound your products
+                    efficiently, we also deliver them quickly to your customers
+                    through our strong carrier and same-day delivery
+                    integrations.
+                  </p>
+                  <p class="tile__note">
+                    Easy access to interstate freeways, courier depots, train
+                    stations, and airports
+                  </p>
+                  <a class="btn" href="get-a-quote.html">Get a Quote</a>
+                </figcaption>
               </figure>
-              <div class="tile__copy">
-                <span class="tile__index">04</span>
-                <h3>LOCATION IS EVERYTHING</h3>
-                <p>
-                  Situated in downtown L.A., next to the 10, 110, and 101 freeways
-                  - Shipfront is perfectly positioned to serve your eCommerce
-                  business. Not only do we inbound your products efficiently, we
-                  also deliver them quickly to your customers through our strong
-                  carrier and same-day delivery integrations.
-                </p>
-                <p class="tile__note">
-                  Easy access to interstate freeways, courier depots, train
-                  stations, and airports
-                </p>
-                <a class="cta-link" href="get-a-quote.html">
-                  Get a Quote
-                  <svg class="arrow" viewBox="0 0 9 9" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.25"><path d="M1 8 L8 1" /><path d="M2.5 1 H8 V6.5" /></svg>
-                </a>
-              </div>
             </li>
           </ul>
 
@@ -720,7 +726,6 @@
 
         <div class="footer__base">
           <span>Built by David T Phung.</span>
-          <span>Shipfront &middot; THE NETWORK</span>
         </div>
       </div>
     </footer>

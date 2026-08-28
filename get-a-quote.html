@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Fast &amp; Easy Quotes &middot; Shipfront &middot; THE NETWORK</title>
+    <title>Fast &amp; Easy Quotes &middot; Shipfront</title>
     <meta
       name="description"
       content="Please take a moment to give us some information. We have expert agents standing by to take care of your logistics needs."
@@ -25,9 +25,20 @@
 
     <header class="nav">
       <div class="shell nav__inner">
-        <a class="wordmark" href="index.html">
+        <a class="wordmark" href="index.html" aria-label="Shipfront">
+          <svg class="mark" viewBox="0 0 24 26" width="18" height="20" aria-hidden="true">
+            <polygon points="7,9 12,6 17,9 12,12" fill="#000000" />
+            <polygon points="7,9 12,12 12,19 7,16" fill="#000000" />
+            <polygon points="17,9 12,12 12,19 17,16" fill="#000000" />
+            <g fill="none" stroke="#FF6A00" stroke-width="1.25" stroke-linecap="square" stroke-linejoin="miter">
+              <path d="M7 9 L12 6 L17 9 L12 12 Z" />
+              <path d="M7 9 L7 16 L12 19 L17 16 L17 9" />
+              <path d="M12 12 L12 19" />
+              <path d="M12 6 L12 13 L7 16" />
+              <path d="M12 13 L17 16" />
+            </g>
+          </svg>
           <b>SHIPFRONT</b>
-          <span>THE NETWORK</span>
         </a>
 
         <button
@@ -100,13 +111,8 @@
               <input id="q-email" name="email" type="email" autocomplete="email" />
             </div>
 
-            <div class="field">
-              <label for="q-phone">Phone</label>
-              <input id="q-phone" name="phone" type="tel" autocomplete="tel" />
-            </div>
-
-            <div class="field">
-              <label for="q-company">Company Name</label>
+            <div class="field field--wide">
+              <label for="q-company">Company</label>
               <input
                 id="q-company"
                 name="company"
@@ -115,43 +121,8 @@
               />
             </div>
 
-            <div class="field field--wide">
-              <label for="q-website">Website</label>
-              <input id="q-website" name="website" type="url" autocomplete="url" />
-            </div>
-
-            <div class="field field--wide">
-              <label for="q-product">Product Description</label>
-              <textarea id="q-product" name="product" rows="4"></textarea>
-            </div>
-
-            <div class="field">
-              <label for="q-skus">Number of SKUs</label>
-              <input id="q-skus" name="skus" type="text" inputmode="numeric" />
-            </div>
-
-            <div class="field">
-              <label for="q-shipments">Shipments per Month</label>
-              <input
-                id="q-shipments"
-                name="shipments"
-                type="text"
-                inputmode="numeric"
-              />
-            </div>
-
-            <div class="field field--wide">
-              <label for="q-turns">Turns per Month</label>
-              <input id="q-turns" name="turns" type="text" inputmode="numeric" />
-            </div>
-
-            <div class="field field--wide">
-              <label for="q-additional">Additional Information</label>
-              <textarea id="q-additional" name="additional" rows="4"></textarea>
-            </div>
-
             <div class="form__foot">
-              <button class="btn btn--lg" type="submit">Send</button>
+              <button class="btn btn--lg" type="submit">Get a Quote</button>
               <span class="mono mono--faint">Preview only</span>
             </div>
 
@@ -209,7 +180,6 @@
 
         <div class="footer__base">
           <span>Built by David T Phung.</span>
-          <span>Shipfront &middot; THE NETWORK</span>
         </div>
       </div>
     </footer>

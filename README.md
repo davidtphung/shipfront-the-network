@@ -1,53 +1,24 @@
 # Shipfront · THE NETWORK
 
-A black-ground editorial site for Shipfront, a warehousing and fulfillment
-operation in downtown Los Angeles. The signature object of the site is
-`#network`: an illustrative six stage fulfillment route (Store, Inventory,
-Fulfillment, Quality check, Carrier, Customer) rendered as a sticky, keyboard
-navigable node graph with a traveling order token.
+Friday Terminal lock on the live 3-pager. Black ground, white type, one
+Kunal cube, one accent. No new pages. Stills are not generated or replaced.
 
 Static HTML, CSS and vanilla JS. No build step, no dependencies, no backend.
 
-## Type
+## Lock
 
-Space Grotesk carries everything: display, headings and body. JetBrains Mono is
-scoped to the terminal roles only, meaning the graph node labels and indices,
-the stage and route counters, and the small uppercase micro labels such as
-eyebrows, chips and field labels. No serif anywhere.
-
-## Paint
-
-The ground is true black `#000000`. Each section lays a subtle wash of that
-same black over it, a radial lift to about `#131313` and back down, plus a
-whisper of warm at the far edge like heat on a dock. There is no colour field.
-
-Terminal orange `#ff6a00` is the only accent, and it is an accent rather than
-a surface. It carries the section eyebrows, the filled Get a Quote plates, the
-four tile Get a Quote paths, the active graph node, the lit route hairline, the
-route numbers, the stage counters and the focus rings. Filled plates are always
-black on orange, never white on orange. Everything else is neutral white on
-black. A pixel sample of a rendered viewport reads an average of about
-`rgb(19, 17, 15)` with zero blue dominant pixels and about one percent orange.
-
-## Capabilities tiles
-
-The four capabilities are image led tiles: clipped still first, then a numeric
-index, the live heading, the verbatim live body, and a single Get a Quote path.
-The stills are the shared Shipfront frames also used on the sibling site and
-are copied here byte for byte, not recoded. They carry the luminance so the
-page can stay black without a paper section.
-
-If `assets/images/` is empty after a fresh clone, run:
-
-```bash
-bash scripts/fetch-stills.sh
-```
-
-It pins every frame to a sha1 and byte count and refuses to write anything
-that does not match, so the frames can never be silently recoded. The publish
-workflow runs the same script before deploying.
-
-Live: <https://davidtphung.github.io/shipfront-the-network/>
+- Ground `#000000`. Type `#FFFFFF`. One accent `#FF6A00`.
+- Accent lives only on the wordmark cube and Get a Quote. CTA label is `#000`
+  on the accent.
+- Cube is Kunal hex + inner Y (stem down) on `viewBox="0 0 24 26"`, fill
+  `#000`, stroke `#FF6A00`, square caps, miter. Same net as live gh-pages /
+  SHEET. Not a pip. Not `32x36` / `M16 3.2`. Not `80 80`.
+- Value props stay Warehousing, Fulfillment, eCommerce Integrations, Location.
+- Copy stays [myshipfront.com](https://myshipfront.com/) live copy. Reef is the
+  address at 1933 S. Broadway, Los Angeles, CA 90007. No invented phone.
+- Get a Quote form is Name, Email, Company only. Preview, no backend.
+- Footer exact line: Built by David T Phung.
+- No em dashes. No cartoons. No new pages.
 
 ## Pages
 
@@ -56,6 +27,27 @@ Live: <https://davidtphung.github.io/shipfront-the-network/>
 | Home          | `index.html`       |
 | Get a Quote   | `get-a-quote.html` |
 | Contact       | `contact.html`     |
+
+## Type
+
+Space Grotesk carries display, headings, body, and UI. JetBrains Mono is only
+for true numerals and codes. No Inter, no serif, no second display face.
+
+## Capabilities tiles
+
+The four capabilities are image-led tiles. The stills are the shared Shipfront
+frames, copied byte for byte. Do not recode them.
+
+If `assets/images/` is empty after a fresh clone, run:
+
+```bash
+bash scripts/fetch-stills.sh
+```
+
+It pins every frame to a sha1 and byte count and refuses to write anything
+that does not match. The publish workflow runs the same script before deploying.
+
+Live: <https://davidtphung.github.io/shipfront-the-network/>
 
 ## Run it locally
 
@@ -70,41 +62,27 @@ Then open <http://127.0.0.1:43317>.
 ## Deploying
 
 GitHub Pages serves the site from the `gh-pages` branch. The workflow in
-`.github/workflows/pages.yml` mirrors `main` onto `gh-pages` on every push, so
-publishing is just a push to `main`.
+`.github/workflows/pages.yml` mirrors `main` onto `gh-pages` on every push.
+Do not merge this lock into `main` unless you intend that mirror.
 
 ## How THE NETWORK behaves
 
 - **Scroll selects, time animates.** Scroll position through the section picks
-  the active stage. The order token is driven by time, not by scroll, so the
-  page never hijacks or rubber bands the scroll.
+  the active stage. The order token is driven by time, not by scroll.
 - **One pass, then a low energy loop.** The token runs the full route once when
   the section scrolls into view, then settles into a slower, dimmer loop.
 - **Pauses offscreen.** An `IntersectionObserver` stops the animation frame
   loop whenever the section leaves the viewport.
 - **Keyboard parity.** Every node is focusable and exposes the same copy that
-  hover and tap reveal, via `aria-describedby` on the node and a persistent
-  description panel. Arrow keys move along the route. Nothing is hover only.
-- **Reduced motion.** With `prefers-reduced-motion: reduce`, the sticky journey
-  flattens, the route is drawn fully lit, all six descriptions stack, and the
-  traveling token is removed entirely.
+  hover and tap reveal.
+- **Reduced motion.** The sticky journey flattens, the route is drawn fully
+  lit, all six descriptions stack, and the traveling token is removed.
 - **Compositor only.** Animated properties are limited to `transform` and
-  `opacity`. Presses use a critically damped curve to `scale(0.97)`.
+  `opacity`.
 - **Mobile.** Below the desktop breakpoint the graph becomes a vertical stepped
   route with all copy visible at once.
-- **No hover only meaning.** Keyboard reads exactly what hover and tap reveal,
-  on the node graph and on the capability tiles. There is no `role="tab"`
-  anywhere; hover on a tile only scales its still.
 
 The graph is illustrative and is labeled as such. It is not a live tracker and
 carries no live customer data.
-
-## Content
-
-Customer-facing service copy is preserved verbatim from the live Shipfront site
-(`myshipfront.com`, `/get-a-quote`, `/contact`). No metrics, warehouse counts,
-coverage maps, delivery estimates, or phone numbers have been invented. The
-Get a Quote form is a design preview: it does not submit and there is no CRM
-behind it.
 
 Built by David T Phung.
