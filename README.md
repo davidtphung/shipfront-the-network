@@ -10,8 +10,9 @@ Static HTML, CSS and vanilla JS. No build step, no dependencies, no backend.
 - Ground `#000000`. Type `#FFFFFF`. One accent `#FF6A00`.
 - Accent lives only on the wordmark cube and Get a Quote. CTA label is `#000`
   on the accent.
-- Cube is Kunal hex + inner Y (stem down), fill `#000`, square caps, miter.
-  Not a pip. Not `32x36` / `M16 3.2`. Not the tilted yaw mark.
+- Cube is Kunal hex + inner Y (stem down) on `viewBox="0 0 24 26"`, fill
+  `#000`, stroke `#FF6A00`, square caps, miter. Same net as live gh-pages /
+  SHEET. Not a pip. Not `32x36` / `M16 3.2`. Not `80 80`.
 - Value props stay Warehousing, Fulfillment, eCommerce Integrations, Location.
 - Copy stays [myshipfront.com](https://myshipfront.com/) live copy. Reef is the
   address at 1933 S. Broadway, Los Angeles, CA 90007. No invented phone.
